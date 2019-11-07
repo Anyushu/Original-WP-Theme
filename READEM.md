@@ -1,2 +1,2 @@
-# Original-WP-Theme
+# Anyushu Theme
  自作のWordPressテーマ
