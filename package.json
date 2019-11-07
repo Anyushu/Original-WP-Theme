@@ -1,20 +1,22 @@
 {
   "name": "anyushu",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "WordPress Theme Anyushu",
+  "main": "resources/js/index.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "css-build": "node-sass resources/css/style.scss lib/css/style.css",
+    "css-watch": "npm run css-build -- --watch",
+    "css-compressed": "npm run css-build -- --output-style compressed",
+    "start": "npm run css-watch"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "bulma": "^0.8.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "webpack": "^4.41.2"
+    "bulma": "^0.8.0",
+    "node-sass": "^4.13.0"
   }
 }

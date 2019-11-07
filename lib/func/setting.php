@@ -65,10 +65,24 @@ function my_delete_local_jquery()
 add_action('wp_enqueue_scripts', 'my_delete_local_jquery');
 
 // Gutenberg用のCSSの消去
-function dequeue_plugins_style() {
+function dequeue_plugins_style()
+{
     wp_dequeue_style('wp-block-library');
 }
-add_action( 'wp_enqueue_scripts', 'dequeue_plugins_style', 9999);
+add_action('wp_enqueue_scripts', 'dequeue_plugins_style', 9999);
+
+// インラインCSSの消去
+function remove_recent_comments_style()
+{
+    global $wp_widget_factory;
+    remove_action('wp_head',
+        [
+          $wp_widget_factory->widgets['WP_Widget_Recent_Comments'],
+          'recent_comments_style'
+        ]
+    );
+}
+add_action('widgets_init', 'remove_recent_comments_style');
 
 // ウィジェット登録
 function arphabet_widgets_init()
@@ -144,18 +158,3 @@ function extend_tiny_mce_before_init($mce_init)
 }
 add_filter('tiny_mce_before_init', 'extend_tiny_mce_before_init');
 
-//コンタクトフォーム７読み込み制限
-function wpcf7_file_load()
-{
-    add_filter('wpcf7_load_js', '__return_false');
-    add_filter('wpcf7_load_css', '__return_false');
-    if (is_page('otoiawase')) {
-        if (function_exists('wpcf7_enqueue_scripts')) {
-            wpcf7_enqueue_scripts();
-        }
-        if (function_exists('wpcf7_enqueue_styles')) {
-            wpcf7_enqueue_styles();
-        }
-    }
-}
-// add_action('template_redirect', 'wpcf7_file_load');
