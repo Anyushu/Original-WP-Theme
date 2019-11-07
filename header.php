@@ -15,7 +15,7 @@ $wp_url = get_template_directory_uri();
 <link href="<?php echo $wp_url; ?>/lib/vendor/nucleo/css/nucleo.css" rel="stylesheet">
 <link href="<?php echo $wp_url; ?>/lib/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 <!-- Theme CSS -->
-<link href="<?php echo $wp_url; ?>/lib/css/argon.min.css" rel="stylesheet">
+<link href="<?php echo $wp_url; ?>/lib/css/argon.css" rel="stylesheet">
 <?php wp_head(); ?>
 </head>
 <body>
@@ -23,8 +23,8 @@ $wp_url = get_template_directory_uri();
 <header class="header-global">
 <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
 <div class="container">
-<a class="navbar-brand mr-lg-5" href="../index.html">
-<img src="<?php echo $wp_url; ?>/lib/images/brand/white.png" alt="brand">
+<a class="navbar-brand mr-lg-5" href="<?php echo $home; ?>">
+<img src="<?php echo $wp_url; ?>/lib/images/logo.svg" alt="brand">
 </a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
