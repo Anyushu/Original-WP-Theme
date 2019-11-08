@@ -1,0 +1,28 @@
+{
+  "name": "anyushu",
+  "version": "1.0.0",
+  "description": "Original WP Theme",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile-sass": "node-sass --include-path scss assets/scss/style.scss lib/css/style.css",
+    "build": "node-sass --include-path scss assets/scss/style.scss lib/css/style.min.css --output-style compressed",
+    "watch": "node-sass --include-path scss assets/scss/style.scss lib/css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anyushu/Original-WP-Theme.git"
+  },
+  "author": "anyushu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anyushu/Original-WP-Theme/issues"
+  },
+  "homepage": "https://github.com/Anyushu/Original-WP-Theme#readme",
+  "dependencies": {
+    "node-sass": "^4.13.0"
+  }
+}

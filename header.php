@@ -1,6 +1,6 @@
 <?php
 $home = esc_url(home_url());
-$wp_url = get_template_directory_uri().'/lib';
+$wp_url = get_template_directory_uri();
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -10,53 +10,62 @@ $wp_url = get_template_directory_uri().'/lib';
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <?php wp_head(); ?>
 </head>
-<body>
-<!-- header -->
-<header id="header">
-<nav class="navbar" role="navigation" aria-label="main navigation">
-<div class="navbar-brand">
-<a class="navbar-item" href="<?php echo $home; ?>"><img src="<?php echo $wp_url; ?>/images/logo.svg" alt="<?php bloginfo('name'); ?>" width="112"></a>
-<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-<span aria-hidden="true"></span>
-<span aria-hidden="true"></span>
-<span aria-hidden="true"></span>
+<body class="bg-secondary">
+
+<header>
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+<div class="container">
+<a class="navbar-brand" href="<?php echo $home; ?>">
+<img src="<?php echo $wp_url; ?>/lib/images/logo.svg" alt="<?php bloginfo('name') ?>">
+</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbar-default">
+<div class="navbar-collapse-header">
+<div class="row">
+<div class="col-6 collapse-brand">
+<a href="<?php echo $home; ?>">
+<img src="<?php echo $wp_url; ?>/lib/images/logo.svg" alt="<?php bloginfo('name') ?>">
 </a>
 </div>
-<div id="navbarBasicExample" class="navbar-menu">
-<div class="navbar-start">
-<a class="navbar-item" href="<?php echo $home; ?>">トップ</a>
-<?php
-// カテゴリー一覧取得
-$args = array(
-    'orderby' => 'id',
-    'order' => 'asc',
-    'hide_empty' => 0,
-);
-$categories = get_categories($args);
-foreach ($categories as $key => $cat): ?>
-<a class="navbar-item" href="<?php echo get_category_link($cat->term_id); ?>"><?php echo $cat->name; ?></a>
-<?php endforeach; ?>
-<div class="navbar-item has-dropdown is-hoverable">
-<a class="navbar-link">More</a>
-<div class="navbar-dropdown">
-<a class="navbar-item">About</a>
-<a class="navbar-item">Jobs</a>
-<a class="navbar-item">Contact</a>
-<hr class="navbar-divider">
-<a class="navbar-item">Report an issue</a>
+<div class="col-6 collapse-close">
+<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+<span></span>
+<span></span>
+</button>
 </div>
 </div>
 </div>
-<div class="navbar-end">
-<div class="navbar-item">
-<div class="buttons">
-<a class="button is-primary"><strong>Sign up</strong></a>
-<a class="button is-light">Log in</a>
+
+<ul class="navbar-nav ml-lg-auto">
+<li class="nav-item">
+<a class="nav-link nav-link-icon" href="#">
+<i class="ni ni-favourite-28"></i>
+<span class="nav-link-inner--text">Discover</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-link-icon" href="#">
+<i class="ni ni-notification-70"></i>
+<span class="nav-link-inner--text">Profile</span>
+</a>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link nav-link-icon" href="#" id="navbar-default_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<i class="ni ni-settings-gear-65"></i>
+<span class="nav-link-inner--text">Settings</span>
+</a>
+<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
+<a class="dropdown-item" href="#">Action</a>
+<a class="dropdown-item" href="#">Another action</a>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="#">Something else here</a>
 </div>
-</div>
+</li>
+</ul>
+
 </div>
 </div>
 </nav>
 </header>
-<!-- main -->
-<main id="main">
