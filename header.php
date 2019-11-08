@@ -24,8 +24,18 @@ $wp_url = get_template_directory_uri().'/lib';
 </div>
 <div id="navbarBasicExample" class="navbar-menu">
 <div class="navbar-start">
-<a class="navbar-item">Home</a>
-<a class="navbar-item">Documentation</a>
+<a class="navbar-item" href="<?php echo $home; ?>">トップ</a>
+<?php
+// カテゴリー一覧取得
+$args = array(
+    'orderby' => 'id',
+    'order' => 'asc',
+    'hide_empty' => 0,
+);
+$categories = get_categories($args);
+foreach ($categories as $key => $cat): ?>
+<a class="navbar-item" href="<?php echo get_category_link($cat->term_id); ?>"><?php echo $cat->name; ?></a>
+<?php endforeach; ?>
 <div class="navbar-item has-dropdown is-hoverable">
 <a class="navbar-link">More</a>
 <div class="navbar-dropdown">
