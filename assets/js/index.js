@@ -1,3 +1,6 @@
+// CSS読み込み
+import '../scss/style.scss';
+
 import 'bootstrap';
 
 $(function() {
