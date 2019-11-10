@@ -5,7 +5,8 @@
   "private": true,
   "main": "index.js",
   "directories": {
-    "lib": "lib"
+    "lib": "lib",
+    "assets": "assets"
   },
   "scripts": {
     "build": "webpack --mode=production",

@@ -19,9 +19,9 @@ function twpp_enqueue_styles()
     );
     wp_enqueue_style(
         'main-style',
-        get_template_directory_uri().'/lib/css/style.css',
+        get_template_directory_uri().'/lib/css/style.min.css',
         [],
-        filemtime(get_template_directory_uri().'/lib/css/style.css'),
+        filemtime(get_template_directory_uri().'/lib/css/style.min.css'),
         'all'
     );
 }
