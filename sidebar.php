@@ -5,13 +5,6 @@ get_header();
 ?>
 <aside id="sidebar" class="col-lg-4 col-md-12 no-left-padding">
 <div class="single-post info-area">
-<div class="sidebar-area">
-<h3 class="h5 title">当サイトの運用サーバー</h3>
-<a class="d-block text-center" href="https://px.a8.net/svt/ejp?a8mat=35PWPM+E22GZ6+CO4+1050F5" rel="nofollow">
-<img src="https://www25.a8.net/svt/bgt?aid=191005402850&wid=001&eno=01&mid=s00000001642006070000&mc=1" alt="wpX Speed">
-</a>
-<img width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=35PWPM+E22GZ6+CO4+1050F5" alt="wpX Speed">
-</div>
 <div class="popular-area sidebar-area">
 <h3 class="h5 title">今月の人気記事</h3>
 <ol class="popular-posts">

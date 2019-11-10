@@ -377,3 +377,10 @@ function get_popular_args($range= "month", $limit = 5)
 
     return $args;
 }
+
+// 固定ページ一覧
+function get_page_list()
+{
+    $page_list = get_posts('order=desc&post_type=page');
+    return $page_list;
+}

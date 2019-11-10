@@ -3,6 +3,7 @@ import '../scss/style.scss';
 
 import 'bootstrap';
 import './argon';
+import '../vendor/font-awesome/js/all.min.js';
 
 window.WebFontConfig = {
   google: {

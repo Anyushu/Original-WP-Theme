@@ -45,11 +45,7 @@ foreach ($tags as $tag):
 <?php endforeach; endif; ?>
 </ul>
 </div>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8001917266946391" data-ad-slot="6612079034" data-ad-format="auto" data-full-width-responsive="false"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+
 <div class="post-info">
 <div class="left-area">
 <a class="avatar" href="https://twitter.com/Anyushu" rel="nofollow" target="_blank"><img src="<?php echo $avatar; ?>" alt="Anyushu"></a>

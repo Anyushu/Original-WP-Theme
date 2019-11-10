@@ -11,10 +11,14 @@ if (!is_home() && !is_front_page()) {
 <div class="container">
 <div class="row row-grid align-items-center my-md">
 <div class="col-lg-6">
-<h3 class="text-primary font-weight-light mb-2">Thank you for supporting us!</h3>
-<h4 class="mb-0 font-weight-light">Let's get in touch on any of these platforms.</h4>
+<div class="d-block">
+<a class="navbar-brand" href="<?php echo $home; ?>">
+<img src="<?php echo $wp_url; ?>/lib/images/logo.svg" alt="<?php bloginfo('name') ?>">
+</a>
 </div>
-<div class="col-lg-6 text-lg-center btn-wrapper">
+<p></p>
+</div>
+<div class="col-lg-6 text-lg-right btn-wrapper">
 <a target="_blank" href="https://twitter.com/Anyushu" class="btn btn-neutral btn-icon-only btn-twitter btn-round btn-lg" data-toggle="tooltip" data-original-title="Twitter">
 <i class="fa fa-twitter"></i>
 </a>
@@ -33,18 +37,13 @@ if (!is_home() && !is_front_page()) {
 </div>
 <div class="col-md-6">
 <ul class="nav nav-footer justify-content-end">
+<?php
+$pages = get_page_list();
+foreach ($pages as $key => $page): ?>
 <li class="nav-item">
-<a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
+<a href="<?php echo get_page_link($page->ID); ?>" class="nav-link"><?php echo $page->post_title; ?></a>
 </li>
-<li class="nav-item">
-<a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
-</li>
-<li class="nav-item">
-<a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
-</li>
-<li class="nav-item">
-<a href="https://github.com/creativetimofficial/argon-design-system/blob/master/LICENSE.md" class="nav-link" target="_blank">MIT License</a>
-</li>
+<?php endforeach; wp_reset_query(); ?>
 </ul>
 </div>
 </div>

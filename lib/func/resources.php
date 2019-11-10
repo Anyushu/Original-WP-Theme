@@ -4,13 +4,6 @@
 function twpp_enqueue_styles()
 {
     wp_enqueue_style(
-        'fontawesome',
-        get_template_directory_uri().'/assets/vendor/font-awesome/css/font-awesome.min.css',
-        [],
-        filemtime(get_template_directory_uri().'/assets/vendor/font-awesome/css/font-awesome.min.css'),
-        'all'
-    );
-    wp_enqueue_style(
         'nucleo',
         get_template_directory_uri().'/assets/vendor/nucleo/css/nucleo.css',
         [],

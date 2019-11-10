@@ -5,9 +5,10 @@ get_header(); ?>
 
 <div class="jumbotron">
 <div class="container">
-<h1 class="display-3">映画・WEB中心の生活のメディア〜Anyushu〜</h1>
-<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-<p><a class="btn btn-default btn-lg" href="#" role="button">Learn more »</a></p>
+<h1 class="display-3">映画・WEB中心のメディアサイト〜Anyushu〜</h1>
+<p>主に映画とWebについての記事を投稿するブログ「Anyushu」です。
+<br>しがないWebエンジニア一人で頑張って記事を更新しています。温かい目で見守ってやって下さい。</p>
+<p><a class="btn btn-default btn-lg" href="#" role="button">詳しく見る</a></p>
 </div>
 </div>
 
