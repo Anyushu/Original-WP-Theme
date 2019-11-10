@@ -3,15 +3,15 @@ $theme-colors: (
   primary: #247ba0
 );
 $font-family-sans-serif: 'Noto Sans JP',sans-serif;
-@media all and (-ms-high-contrast: none) {
-  body,
-  popover,
-  tooltip {
-    font-family: 'Noto Sans JP',sans-serif;
-  }
+@import "argon.scss";
+
+body {
+  color: $gray-900;
+  font-family: 'Noto Sans JP',sans-serif;
 }
 
 a {
   cursor: pointer !important;
 }
-@import "argon.scss";
+
+@import "single.scss";

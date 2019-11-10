@@ -3,7 +3,7 @@ $home = esc_url(home_url());
 $wp_url = get_template_directory_uri();
 get_header();
 ?>
-<aside id="sidebar" class="col-lg-4 col-md-12 no-left-padding">
+<aside id="sidebar" class="col-md-3 ml-auto bg-white">
 <div class="single-post info-area">
 <div class="popular-area sidebar-area">
 <h3 class="h5 title">今月の人気記事</h3>

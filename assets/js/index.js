@@ -1,10 +1,12 @@
-// CSS読み込み
+// CSSインポート
 import '../scss/style.scss';
 
+// JSインポート
+import '../vendor/font-awesome/js/all.min.js';
 import 'bootstrap';
 import './argon';
-import '../vendor/font-awesome/js/all.min.js';
 
+// Googleフォント非同期読み込み
 window.WebFontConfig = {
   google: {
     families: ["Noto+Sans+JP:400,700"]
