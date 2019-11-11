@@ -22,7 +22,7 @@ if (has_post_thumbnail()) {
     $img = $wp_url.'/lib/images/blog-1-1000x600.jpg';
     $img_m = $wp_url.'/lib/images/blog-1-1000x600.jpg';
 }
-$thumbnail = '<img class="card-img-top" src="'.$img_m.'" srcset="'.$img_m.' 1x, '.$img.' 2x" alt="'.$ttl.'">';
+$thumbnail = '<img class="card-img-top" src="'.$img_m.'" srcset="'.$img_m.' 1x, '.$img.' 2x" alt="'.$ttl.'">'."\n";
 ?>
 
 <section id="post-content" class="py-md-5 py-4">

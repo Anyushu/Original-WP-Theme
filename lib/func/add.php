@@ -111,7 +111,7 @@ function nlink_scode($atts)
     }
     if (has_post_thumbnail($id)) {
         $img = wp_get_attachment_image_src(get_post_thumbnail_id($id), 'thumbnail');
-        $img_tag = "<img src='".$img[0]."' alt='{$title}' width=".$img[1]." height=".$img[2].">";
+        $img_tag = "<img src='".$img[0]."' alt='{$title}'".">";
     }
     $nlink .='
 <div class="blog-card">

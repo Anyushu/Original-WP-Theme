@@ -30,8 +30,8 @@ $thumbnail = '<img class="card-img-top" src="'.$img_m.'" srcset="'.$img_m.' 1x, 
 <?php echo $thumbnail; ?>
 <div class="card-body py-3">
 <h2 class="h6 text-dark font-weight-bold card-title"><?php echo $ttl; ?></h2>
-<div>
-<span class="badge badge-pill badge-primary"><?php echo $cat_name; ?></span>
+<div class="text-right">
+<span class="badge badge-pill badge-default"><?php echo $cat_name; ?></span>
 </div>
 </div>
 </a>

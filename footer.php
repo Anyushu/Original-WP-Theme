@@ -28,7 +28,7 @@ $wp_url = get_template_directory_uri(); ?>
 <hr>
 <div class="row align-items-center justify-content-md-between">
 <div class="col-md-6">
-<div class="copyright">© <?php echo date('Y'); ?> <a href="<?php echo $home; ?>">Anyushu</a></div>
+<div class="copyright">©<?php echo date('Y'); ?> <a href="<?php echo $home; ?>">Anyushu</a></div>
 </div>
 <div class="col-md-6">
 <ul class="nav nav-footer justify-content-end">
