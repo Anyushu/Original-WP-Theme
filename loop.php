@@ -24,7 +24,7 @@ if (has_post_thumbnail()) {
 $thumbnail = '<img class="card-img-top" src="'.$img_m.'" srcset="'.$img_m.' 1x, '.$img.' 2x" alt="'.$ttl.'">';
 ?>
 <!-- article -->
-<div class="col-lg-4 mb-md-5 mb-4">
+<div class="col-lg-4 mb-md-5 mb-0">
 <div class="card card-lift--hover shadow border-0">
 <a href="<?php echo $permalink; ?>">
 <?php echo $thumbnail; ?>

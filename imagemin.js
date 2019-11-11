@@ -4,7 +4,7 @@ const imageminPngquant = require('imagemin-pngquant');
 const imageminSvgo = require('imagemin-svgo');
 
 (async () => {
-  const files = await imagemin(['assets/img/*.{jpg,png,svg}'], {
+  const files = await imagemin(['assets/img/**/*.{jpg,png,svg}'], {
     destination: 'lib/images',
     plugins: [
       imageminSvgo(),
