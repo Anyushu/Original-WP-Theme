@@ -7,7 +7,7 @@ if (!is_home() && !is_front_page()) {
 ?>
 </main>
 <!-- footer -->
-<footer class="footer has-cards">
+<footer class="footer bg-white mt-5">
 <div class="container">
 <div class="row row-grid align-items-center my-md">
 <div class="col-lg-6">
@@ -16,17 +16,16 @@ if (!is_home() && !is_front_page()) {
 <img src="<?php echo $wp_url; ?>/lib/images/logo.svg" alt="<?php bloginfo('name') ?>">
 </a>
 </div>
-<p></p>
 </div>
 <div class="col-lg-6 text-lg-right btn-wrapper">
 <a target="_blank" href="https://twitter.com/Anyushu" class="btn btn-neutral btn-icon-only btn-twitter btn-round btn-lg" data-toggle="tooltip" data-original-title="Twitter">
-<i class="fa fa-twitter"></i>
+<i class="fab fa-twitter"></i>
 </a>
 <a target="_blank" href="https://www.facebook.com/Anyushu2017/" class="btn btn-neutral btn-icon-only btn-facebook btn-round btn-lg" data-toggle="tooltip" data-original-title="Facebook">
-<i class="fa fa-facebook-square"></i>
+<i class="fab fa-facebook-square"></i>
 </a>
 <a target="_blank" href="https://github.com/Anyushu" class="btn btn-neutral btn-icon-only btn-github btn-round btn-lg" data-toggle="tooltip" data-original-title="Github">
-<i class="fa fa-github"></i>
+<i class="fab fa-github"></i>
 </a>
 </div>
 </div>

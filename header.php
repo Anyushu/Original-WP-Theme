@@ -12,8 +12,8 @@ $wp_url = get_template_directory_uri();
 </head>
 <body class="bg-secondary">
 
-<header>
-<nav class="navbar navbar-expand-lg navbar-light bg-white">
+<header class="header-global">
+<nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-light bg-white headroom">
 <div class="container">
 <a class="navbar-brand" href="<?php echo $home; ?>">
 <img src="<?php echo $wp_url; ?>/lib/images/logo.svg" alt="<?php bloginfo('name') ?>">
@@ -44,12 +44,9 @@ $wp_url = get_template_directory_uri();
 </div>
 
 <!-- 記事カテゴリー -->
-<ul class="navbar-nav ml-lg-auto">
+<ul class="navbar-nav mr-lg-auto">
 <li class="nav-item dropdown">
-<a class="nav-link nav-link-icon" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-<i class="ni ni-folder-17"></i>
-<span class="nav-link-inner--text">記事カテゴリー</span>
-</a>
+<a class="nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">記事カテゴリー</a>
 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
 <?php
 $args = [
@@ -69,12 +66,12 @@ foreach ($categories as $category):
 </ul>
 
 <!-- 検索 -->
-<form class="form-inline ml-lg-2">
+<form class="form-inline">
 <div class="input-group input-group-alternative">
-<div class="input-group-prepend">
+<input class="form-control" placeholder="キーワードで検索" type="text">
+<div class="input-group-append">
 <span class="input-group-text"><i class="ni ni-zoom-split-in"></i></span>
 </div>
-<input class="form-control form-control-alternative" placeholder="キーワードで記事検索" type="text">
 </div>
 </form>
 

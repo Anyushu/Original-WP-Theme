@@ -1,13 +1,14 @@
+<div class="row row-grid">
 <?php
 $home = esc_url(home_url());
 $wp_url = get_template_directory_uri();
+
 if (have_posts()): while (have_posts()):
 the_post();
 $ttl = get_the_title();
 $permalink = get_the_permalink();
 $cat = get_the_category();
-$excerpt = get_the_excerpt();
-$cat = $cat[0];
+$cat_name = $cat[0]->name;
 $img = '';
 if (has_post_thumbnail()) {
     $img = get_the_post_thumbnail_url(get_the_ID(), 'large');
@@ -20,35 +21,26 @@ if (has_post_thumbnail()) {
     $img = $wp_url.'/lib/images/blog-1-1000x600.jpg';
     $img_m = $wp_url.'/lib/images/blog-1-1000x600.jpg';
 }
+$thumbnail = '<img class="card-img-top" src="'.$img_m.'" srcset="'.$img_m.' 1x, '.$img.' 2x" alt="'.$ttl.'">';
 ?>
-
-<div class="col-lg-4 col-md-6">
-<div class="card h-100">
-<div class="single-post post-style-1">
-<div class="blog-image">
-<a href="<?php echo $permalink; ?>" title="<?php echo $ttl; ?>">
-<img src="<?php echo $img_m; ?>" srcset="<?php echo $img_m; ?> 1x,<?php echo $img; ?> 2x" alt="<?php echo $ttl; ?>">
+<!-- article -->
+<div class="col-lg-4 mb-md-5 mb-4">
+<div class="card card-lift--hover shadow border-0">
+<a href="<?php echo $permalink; ?>">
+<?php echo $thumbnail; ?>
+<div class="card-body py-3">
+<h2 class="h6 text-dark font-weight-bold card-title"><?php echo $ttl; ?></h2>
+<div>
+<span class="badge badge-pill badge-primary"><?php echo $cat_name; ?></span>
+</div>
+</div>
 </a>
 </div>
-<div class="blog-info">
-<h2 class="title"><a href="<?php echo $permalink; ?>"><?php echo $ttl; ?></a></h2>
-<time class="blog-info-time" datetime="<?php the_time('Y-m-d'); ?>"><i class="mr-2 far fa-calendar-alt"></i><?php the_time('Y.m.d'); ?></time>
-<ul class="post-footer">
-<li>
-<a href="<?php echo $home.'/'.$cat->slug; ?>">
-<i class="fas fa-folder"></i><?php echo get_cat_name($cat->term_id); ?></a>
-</li>
-<li>
-<span>
-<i class="fas fa-eye"></i><?php if (function_exists('wpp_get_views')) echo wpp_get_views(get_the_ID(), 'all'); ?></span>
-</li>
-</ul>
 </div>
+<?php endwhile; ?>
 </div>
-</div>
-</div>
-<?php endwhile;
-else:
-?>
-<p class="h3">I'm sorry. Not found</p>
-<?php endif;
+<?php
+endif;
+if (function_exists('pagination')) {
+    pagination($additional_loop->max_num_pages);
+}

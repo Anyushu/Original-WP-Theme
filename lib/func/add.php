@@ -52,33 +52,36 @@ function setPostViews($postID)
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
 // ページネーション
-function pagination($pages = 1, $range = 2, $show_only = false)
+function pagination($pages = '', $range = 1)
 {
-    $pages = (int) $pages;
-    $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-    $text_first   = "« 最初へ";
-    $text_before  = '<span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span>';
-    $text_next    = '<span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span>';
-    $text_last    = "最後へ »";
-    if ($pages === 1) {
-        return;
+    $showitems = ($range * 2)+1;
+    $text_before = '<i class="fas fa-angle-left"></i><span class="sr-only">Previous</span>';
+    $text_next = '<i class="fas fa-angle-right"></i><span class="sr-only">Next</span>';
+    global $paged;
+    if (empty($paged)) {
+        $paged = 1;
     }
-    if (1 !== $pages) {
-        echo '<nav class="d-flex justify-content-center wow fadeIn">'."\n".'<ul class="pagination pg-blue">'."\n";
-        if ($paged > 1) {
-            echo '<li class="page-item">'."\n".'<a class="page-link" href="'.get_pagenum_link($paged - 1).'" aria-label="Previous">'.$text_before.'</a>'."\n".'</li>';
+    if ($pages == '') {
+        global $wp_query;
+        $pages = $wp_query->max_num_pages;
+        if (!$pages) {
+            $pages = 1;
         }
-        for ($i = 1; $i <= $pages; $i++) {
-            if ($i <= $paged + $range && $i >= $paged - $range) {
-                if ($paged === $i) {
-                    echo '<li class="page-item active">'."\n".'<a class="page-link" href="'.get_pagenum_link($i).'">'.$i.'<span class="sr-only">(current)</span></a>'."\n".'</li>'."\n";
-                } else {
-                    echo '<li class="page-item">'."\n".'<a class="page-link" href="'.get_pagenum_link($i).'">'.$i.'</a>'."\n".'</li>'."\n";
-                }
+    }
+    if (1 != $pages) {
+        echo '<nav class="mt-md-5 mt-3" aria-label="Page navigation example">'."\n".'<ul class="pagination justify-content-center m-0 p-0">'."\n";
+        if ($paged > 1 && $showitems < $pages) {
+            echo '<li class="page-item">'."<a class=\"page-link\" href='".get_pagenum_link($paged - 1)."'>{$text_before}</a></li>";
+        }
+        for ($i=1; $i <= $pages; $i++) {
+            if (1 != $pages &&(!($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems)) {
+                echo ($paged == $i)?
+                '<li class="page-item active"><span class="page-link">'.$i.'</span></li>'."\n":
+                '<li class="page-item"><a class="page-link" href="'.get_pagenum_link($i).'">'.$i.'</a></li>'."\n";
             }
         }
-        if ($paged < $pages) {
-            echo '<li class="page-item">'."\n".'<a class="page-link" href="'.get_pagenum_link($paged + 1).'" aria-label="Next">'.$text_next.'</a>'."\n".'</li>'."\n";
+        if ($paged < $pages && $showitems < $pages) {
+            echo '<li class="page-item">'."<a class=\"page-link\" href=\"".get_pagenum_link($paged + 1)."\">{$text_next}</a></li>";
         }
         echo '</ul>'."\n".'</nav>'."\n";
     }
