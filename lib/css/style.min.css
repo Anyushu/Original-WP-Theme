@@ -11902,6 +11902,10 @@ body {
 a {
   cursor: pointer !important; }
 
+.post-content img {
+  max-width: 100%;
+  height: auto; }
+
 .blog-card {
   position: relative; }
   .blog-card a {

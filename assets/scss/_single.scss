@@ -1,3 +1,10 @@
+.post-content {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
 .blog-card {
   position: relative;
 
@@ -23,6 +30,7 @@
     width: 100px;
     height: 100px;
     vertical-align: middle;
+
     img {
       width: 100%;
       height: auto;

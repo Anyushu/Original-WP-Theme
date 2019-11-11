@@ -3,9 +3,8 @@ $home = esc_url(home_url());
 $wp_url = get_template_directory_uri();
 get_header();
 ?>
-<aside id="sidebar" class="col-md-3 ml-auto bg-white">
-<div class="single-post info-area">
-<div class="popular-area sidebar-area">
+<aside id="sidebar" class="col-md-4">
+<div class="popular-area sidebar-area bg-white p-md-4 p-3 mb-4">
 <h3 class="h5 title">今月の人気記事</h3>
 <ol class="popular-posts">
 <?php
@@ -43,7 +42,7 @@ foreach ((get_the_category()) as $cat) {
     break ;
 }
 ?>
-<div class="popular-area sidebar-area">
+<div class="popular-area sidebar-area bg-white p-md-4 p-3 mb-4">
 <h3 class="h5 title">関連記事</h3>
 <ol class="popular-posts">
 <?php
@@ -75,8 +74,7 @@ wp_reset_query();
 </ol>
 </div>
 <?php endif; ?>
-
-<div class="sidebar-area tag-area">
+<div class="sidebar-area tag-area bg-white p-md-4 p-3 mb-4">
 <h3 class="h5 title">おすすめタグ</h3>
 <ul>
 <?php
@@ -94,6 +92,5 @@ if ($posttags) {
 ?>
 </ul>
 </div>
-<?php dynamic_sidebar('side-bar'); ?>
-</div>
+<?php // dynamic_sidebar('side-bar'); ?>
 </aside>

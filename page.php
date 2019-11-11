@@ -20,7 +20,7 @@ $avatar = get_avatar_url($user_id, 120);
 </div>
 </div>
 <section class="post-area section">
-<div class="container">
+<div class="container container-lg">
 <div id="main-wrap" class="row">
 <div id="main-content" class="col-lg-8 col-md-12 no-right-padding">
 <div class="main-post">

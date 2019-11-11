@@ -11,8 +11,8 @@ $cat = get_the_category();
 $cat_name = $cat[0]->name;
 $img = '';
 if (has_post_thumbnail()) {
-    $img = get_the_post_thumbnail_url(get_the_ID(), 'large');
-    $img_m = get_the_post_thumbnail_url(get_the_ID(), 'medium');
+    $img = get_the_post_thumbnail_url(get_the_ID(), 'full');
+    $img_m = get_the_post_thumbnail_url(get_the_ID(), 'large');
     if ($img == false) {
         $img = $wp_url.'/lib/images/blog-1-1000x600.jpg';
         $img_m = $wp_url.'/lib/images/blog-1-1000x600.jpg';

@@ -11,19 +11,16 @@ $wp_url = get_template_directory_uri();
 <?php wp_head(); ?>
 </head>
 <body class="bg-secondary">
-
 <header class="header-global">
 <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-light bg-white headroom">
-<div class="container">
+<div class="container container-lg">
 <a class="navbar-brand" href="<?php echo $home; ?>">
 <img src="<?php echo $wp_url; ?>/lib/images/logo.svg" alt="<?php bloginfo('name') ?>">
 </a>
-
 <!-- ハンバーガーボタン -->
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
 </button>
-
 <div id="navbar-default" class="collapse navbar-collapse">
 <div class="navbar-collapse-header">
 <div class="row">
@@ -32,7 +29,6 @@ $wp_url = get_template_directory_uri();
 <img src="<?php echo $wp_url; ?>/lib/images/logo.svg" alt="<?php bloginfo('name') ?>">
 </a>
 </div>
-
 <!-- 閉じるボタン -->
 <div class="col-6 collapse-close">
 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,7 +38,6 @@ $wp_url = get_template_directory_uri();
 </div>
 </div>
 </div>
-
 <!-- 記事カテゴリー -->
 <ul class="navbar-nav mr-lg-auto">
 <li class="nav-item dropdown">
@@ -64,7 +59,6 @@ foreach ($categories as $category):
 </div>
 </li>
 </ul>
-
 <!-- 検索 -->
 <form class="form-inline">
 <div class="input-group input-group-alternative">
@@ -74,10 +68,8 @@ foreach ($categories as $category):
 </div>
 </div>
 </form>
-
 </div>
 </div>
 </nav>
 </header>
-
 <main>
