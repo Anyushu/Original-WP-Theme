@@ -17,7 +17,7 @@ $gray-600: #8898aa !default;
 // Line footer color
 $gray-700: #525f7f !default;
 // Line p color
-$gray-800: #32325d !default;
+$gray-800: #212529 !default;
 // Line heading color
 $gray-900: #212529 !default;
 $black: #000 !default;
@@ -64,7 +64,7 @@ $brand-colors: ()
 $brand-colors: map-merge(("facebook": $facebook, "twitter": $twitter, "google-plus": $google-plus, "instagram": $instagram, "pinterest": $pinterest, "youtube": $youtube, "slack": $slack, "dribbble": $dribbble, "github": $github), $brand-colors);
 $shape-colors: ()
 !default;
-$shape-colors: map-merge(("default": #32325d, "primary": #5533ff, "secondary": #24b47e, "neutral": #e9ecef, "blue-gray": #b2cbe1,), $shape-colors);
+$shape-colors: map-merge(("default": #212529, "primary": #5533ff, "secondary": #24b47e, "neutral": #e9ecef, "blue-gray": #b2cbe1,), $shape-colors);
 $shapes-primary-colors: ()
 !default;
 $shapes-primary-colors: map-merge(("step-1-gradient-bg": #281483, "step-2-gradient-bg": #8f6ed5, "step-3-gradient-bg": #d782d9, "span-1-bg": #53f, "span-2-bg": #4553ff, "span-3-bg": #4f40ff, "span-4-bg": #25ddf5, "span-5-bg": #1fa2ff), $shapes-primary-colors);
@@ -76,7 +76,7 @@ $shapes-light-colors: ()
 $shapes-light-colors: map-merge(("step-1-gradient-bg": #b2cbe1, "step-2-gradient-bg": #f6f9fc, "step-3-gradient-bg": #f6f9fc, "span-1-bg": #b4cce1, "span-2-bg": #c5dbef, "span-3-bg": #b9d5ed, "span-4-bg": #74e4a2, "span-5-bg": #008169), $shapes-light-colors);
 $shapes-dark-colors: ()
 !default;
-$shapes-dark-colors: map-merge(("step-1-gradient-bg": #32325d, "step-2-gradient-bg": #32325d, "step-3-gradient-bg": #32325d, "span-1-bg": #2e2e57, "span-2-bg": #2b2b58, "span-3-bg": #25254d, "span-4-bg": #d782d9, "span-5-bg": #008169), $shapes-dark-colors);
+$shapes-dark-colors: map-merge(("step-1-gradient-bg": #212529, "step-2-gradient-bg": #212529, "step-3-gradient-bg": #212529, "span-1-bg": #2e2e57, "span-2-bg": #2b2b58, "span-3-bg": #25254d, "span-4-bg": #d782d9, "span-5-bg": #008169), $shapes-dark-colors);
 // Set a specific jump point for requesting color jumps
 $theme-color-interval: 8% !default;
 // The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.

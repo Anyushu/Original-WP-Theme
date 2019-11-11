@@ -3,7 +3,7 @@ $home = esc_url(home_url());
 $wp_url = get_template_directory_uri(); ?>
 </main>
 <!-- footer -->
-<footer class="footer bg-white">
+<footer class="footer bg-white mt-5">
 <div class="container container-lg">
 <div class="row row-grid align-items-center my-md">
 <div class="col-lg-6">
