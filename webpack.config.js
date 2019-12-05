@@ -8,7 +8,7 @@ module.exports = (env, argv) => ({
   entry: './assets/js/index.js',
   output: {
     path: path.resolve(__dirname, 'lib/js'),
-    filename: 'index.js'
+    filename: 'bundle.js'
   },
   optimization: {
     minimizer: [
@@ -33,7 +33,8 @@ module.exports = (env, argv) => ({
         {
           loader: 'css-loader',
           options: {
-            url: false
+            url: false,
+            sourceMap: true
           }
         },
         'sass-loader'
@@ -42,12 +43,12 @@ module.exports = (env, argv) => ({
   },
   plugins: [
     new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
+      $: 'jquery',
+      jQuery: 'jquery',
       Popper: ['popper.js', 'default'],
     }),
     new MiniCssExtractPlugin({
-      filename: '../css/style.min.css'
+      filename: '../css/style.css'
     })
   ],
   performance: {

@@ -2,7 +2,6 @@
 <?php
 $home = esc_url(home_url());
 $wp_url = get_template_directory_uri();
-
 if (have_posts()): while (have_posts()):
 the_post();
 $ttl = get_the_title();
@@ -23,8 +22,7 @@ if (has_post_thumbnail()) {
 }
 $thumbnail = '<img class="card-img-top" src="'.$img_m.'" srcset="'.$img_m.' 1x, '.$img.' 2x" alt="'.$ttl.'">';
 ?>
-<!-- article -->
-<div class="col-lg-4 mb-md-5 mb-0">
+<div class="col-lg-4 col-md-6 mb-md-5 mb-0">
 <div class="card card-lift--hover shadow border-0">
 <a href="<?php echo $permalink; ?>">
 <?php echo $thumbnail; ?>
