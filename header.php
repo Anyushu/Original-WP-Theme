@@ -13,9 +13,11 @@ $wp_url = get_template_directory_uri();
 <header class="header-global">
 <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-light bg-white headroom">
 <div class="container container-lg">
+<h1>
 <a class="navbar-brand" href="<?php echo $home; ?>">
 <img src="<?php echo $wp_url; ?>/lib/images/logo.svg" alt="<?php bloginfo('name') ?>">
 </a>
+</h1>
 <!-- ハンバーガーボタン -->
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>

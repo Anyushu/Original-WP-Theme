@@ -2,9 +2,15 @@
 import '../scss/style.scss';
 
 // JSインポート
-import '../vendor/font-awesome/js/all.min.js';
+import '@fortawesome/fontawesome-free/js/all';
 import 'bootstrap';
+import Headroom from 'headroom.js';
 import './argon';
+
+// headroom
+let header = document.querySelector("navbar-main");
+let headroom  = new Headroom(header);
+headroom.init();
 
 // Googleフォント非同期読み込み
 window.WebFontConfig = {
@@ -16,10 +22,10 @@ window.WebFontConfig = {
   }
 };
 (function() {
-  var a = document.createElement("script");
-  a.src = "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js";
-  a.type = "text/javascript";
-  a.async = "true";
-  var b = document.getElementsByTagName("script")[0];
+  var a = document.createElement('script');
+  a.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+  a.type = 'text/javascript';
+  a.async = 'true';
+  var b = document.getElementsByTagName('script')[0];
   b.parentNode.insertBefore(a, b)
 })();

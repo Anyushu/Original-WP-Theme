@@ -9,6 +9,7 @@ $permalink = get_the_permalink();
 $cat = get_the_category();
 $cat_name = $cat[0]->name;
 $img = '';
+$img_m = '';
 if (has_post_thumbnail()) {
     $img = get_the_post_thumbnail_url(get_the_ID(), 'full');
     $img_m = get_the_post_thumbnail_url(get_the_ID(), 'large');
@@ -23,7 +24,7 @@ if (has_post_thumbnail()) {
 $thumbnail = '<img class="card-img-top" src="'.$img_m.'" srcset="'.$img_m.' 1x, '.$img.' 2x" alt="'.$ttl.'">';
 ?>
 <div class="col-lg-4 col-md-6 mb-md-5 mb-0">
-<div class="card card-lift--hover shadow border-0">
+<div class="card card-lift--hover shadow-sm border-0">
 <a href="<?php echo $permalink; ?>">
 <?php echo $thumbnail; ?>
 <div class="card-body py-3">

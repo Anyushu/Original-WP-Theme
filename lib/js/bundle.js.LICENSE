@@ -76,3 +76,9 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
+
+/*!
+ * headroom.js v0.10.3 - Give your page some headroom. Hide your header until you need it
+ * Copyright (c) 2019 Nick Williams - http://wicky.nillia.ms/headroom.js
+ * License: MIT
+ */
