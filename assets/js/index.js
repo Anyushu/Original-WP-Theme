@@ -2,15 +2,8 @@
 import '../scss/style.scss';
 
 // JSインポート
-import '@fortawesome/fontawesome-free/js/all';
-import 'bootstrap';
-import Headroom from 'headroom.js';
-import './argon';
+import './material-kit';
 
-// headroom
-let header = document.querySelector("navbar-main");
-let headroom  = new Headroom(header);
-headroom.init();
 
 // Googleフォント非同期読み込み
 window.WebFontConfig = {
