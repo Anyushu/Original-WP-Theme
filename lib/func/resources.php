@@ -3,13 +3,13 @@
 // CSSの管理
 function twpp_enqueue_styles()
 {
-    wp_enqueue_style(
-        'nucleo',
-        get_template_directory_uri().'/assets/vendor/nucleo/css/nucleo.css',
-        [],
-        '1.0.0',
-        'all'
-    );
+    // wp_enqueue_style(
+    //     'nucleo',
+    //     get_template_directory_uri().'/assets/vendor/nucleo/css/nucleo.css',
+    //     [],
+    //     '1.0.0',
+    //     'all'
+    // );
     wp_enqueue_style(
         'main-style',
         get_template_directory_uri().'/lib/css/style.css',

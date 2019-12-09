@@ -1,4 +1,4 @@
-<div class="row row-grid">
+<div class="row">
 <?php
 $home = esc_url(home_url());
 $wp_url = get_template_directory_uri();
@@ -23,14 +23,14 @@ if (has_post_thumbnail()) {
 }
 $thumbnail = '<img class="card-img-top" src="'.$img_m.'" srcset="'.$img_m.' 1x, '.$img.' 2x" alt="'.$ttl.'">';
 ?>
-<div class="col-lg-4 col-md-6 mb-md-5 mb-0">
-<div class="card card-lift--hover shadow-sm border-0">
+<div class="col-lg-4 col-md-6">
+<div class="card">
 <a href="<?php echo $permalink; ?>">
 <?php echo $thumbnail; ?>
-<div class="card-body py-3">
-<h2 class="h6 text-dark font-weight-bold card-title"><?php echo $ttl; ?></h2>
+<div class="card-body">
+<h2 class="h3 text-dark font-weight-bold"><?php echo $ttl; ?></h2>
 <div class="text-right">
-<span class="badge badge-pill badge-default"><?php echo $cat_name; ?></span>
+<span class="badge badge-pill badge-primary"><?php echo $cat_name; ?></span>
 </div>
 </div>
 </a>

@@ -3,45 +3,25 @@ $home = esc_url(home_url());
 $wp_url = get_template_directory_uri(); ?>
 </main>
 <!-- footer -->
-<footer class="footer bg-white mt-5">
-<div class="container container-lg">
-<div class="row row-grid align-items-center my-md">
-<div class="col-lg-6">
-<div class="d-block">
-<a class="navbar-brand" href="<?php echo $home; ?>">
-<img src="<?php echo $wp_url; ?>/lib/images/logo.svg" alt="<?php bloginfo('name') ?>">
-</a>
-</div>
-</div>
-<div class="col-lg-6 text-lg-right btn-wrapper">
-<a target="_blank" href="https://twitter.com/Anyushu" class="btn btn-neutral btn-icon-only btn-twitter btn-round btn-lg" data-toggle="tooltip" data-original-title="Twitter">
-<i class="fab fa-twitter"></i>
-</a>
-<a target="_blank" href="https://www.facebook.com/Anyushu2017/" class="btn btn-neutral btn-icon-only btn-facebook btn-round btn-lg" data-toggle="tooltip" data-original-title="Facebook">
-<i class="fab fa-facebook-square"></i>
-</a>
-<a target="_blank" href="https://github.com/Anyushu" class="btn btn-neutral btn-icon-only btn-github btn-round btn-lg" data-toggle="tooltip" data-original-title="Github">
-<i class="fab fa-github"></i>
-</a>
-</div>
-</div>
-<hr>
-<div class="row align-items-center justify-content-md-between">
-<div class="col-md-6">
-<div class="copyright">©<?php echo date('Y'); ?> <a href="<?php echo $home; ?>">Anyushu</a></div>
-</div>
-<div class="col-md-6">
-<ul class="nav nav-footer justify-content-end">
-<?php
-$pages = get_page_list();
-foreach ($pages as $key => $page): ?>
-<li class="nav-item">
-<a href="<?php echo get_page_link($page->ID); ?>" class="nav-link"><?php echo $page->post_title; ?></a>
+<footer class="footer" data-background-color="black">
+<div class="container">
+<nav class="float-left">
+<ul>
+<li>
+<a href="https://www.creative-tim.com">Creative Tim</a>
 </li>
-<?php endforeach; wp_reset_query(); ?>
+<li>
+<a href="https://creative-tim.com/presentation">About Us</a>
+</li>
+<li>
+<a href="http://blog.creative-tim.com">Blog</a>
+</li>
+<li>
+<a href="https://www.creative-tim.com/license">Licenses</a>
+</li>
 </ul>
-</div>
-</div>
+</nav>
+<div class="copyright float-right">&copy;<?php echo date('Y').''.bloginfo('name'); ?></div>
 </div>
 </footer>
 <?php wp_footer(); ?>

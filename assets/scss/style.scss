@@ -1,3 +1,6 @@
-@import 'custom';
-@import 'material-kit.scss';
-@import 'single.scss';
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,500&display=swap&subset=japanese');
+@import './custom';
+@import './material-kit.scss';
+@import './add-style';
+@import './single.scss';

@@ -9,41 +9,30 @@ $wp_url = get_template_directory_uri();
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <?php wp_head(); ?>
 </head>
-<body class="bg-secondary">
-<header class="header-global">
-<nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-light bg-white headroom">
-<div class="container container-lg">
-<h1>
-<a class="navbar-brand" href="<?php echo $home; ?>">
-<img src="<?php echo $wp_url; ?>/lib/images/logo.svg" alt="<?php bloginfo('name') ?>">
+<body class="sidebar-collapse">
+
+<header>
+<nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
+<div class="container">
+<div class="navbar-translate">
+<a class="navbar-brand" href="<?php echo $home; ?>/">
+<?php bloginfo('name'); ?>
+<!-- <img src="<?php echo $wp_url; ?>/lib/images/logo.svg" alt="<?php bloginfo('name'); ?>" width="130"> -->
 </a>
-</h1>
-<!-- ハンバーガーボタン -->
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+<button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+<span class="sr-only">Toggle navigation</span>
+<span class="navbar-toggler-icon"></span>
+<span class="navbar-toggler-icon"></span>
 <span class="navbar-toggler-icon"></span>
 </button>
-<div id="navbar-default" class="collapse navbar-collapse">
-<div class="navbar-collapse-header">
-<div class="row">
-<div class="col-6 collapse-brand">
-<a href="<?php echo $home; ?>">
-<img src="<?php echo $wp_url; ?>/lib/images/logo.svg" alt="<?php bloginfo('name') ?>">
+</div>
+<div class="collapse navbar-collapse">
+<ul class="navbar-nav ml-auto">
+<li class="dropdown nav-item">
+<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+<i class="material-icons">category</i>Category
 </a>
-</div>
-<!-- 閉じるボタン -->
-<div class="col-6 collapse-close">
-<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
-<span></span>
-<span></span>
-</button>
-</div>
-</div>
-</div>
-<!-- 記事カテゴリー -->
-<ul class="navbar-nav mr-lg-auto">
-<li class="nav-item dropdown">
-<a class="nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">記事カテゴリー</a>
-<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
+<div class="dropdown-menu dropdown-with-icons">
 <?php
 $args = [
     'orderby' => 'id',
@@ -60,17 +49,30 @@ foreach ($categories as $category):
 </div>
 </li>
 </ul>
-<!-- 検索 -->
-<form class="form-inline">
-<div class="input-group input-group-alternative">
-<input class="form-control" placeholder="キーワードで検索" type="text">
-<div class="input-group-append">
-<span class="input-group-text"><i class="ni ni-zoom-split-in"></i></span>
+<form id="search-form" class="form-inline">
+<div class="form-group bmd-form-group">
+<input type="text" class="form-control" placeholder="Search">
 </div>
-</div>
+<button type="submit" class="btn btn-primary btn-raised btn-fab btn-round">
+<i class="material-icons">search</i>
+</button>
 </form>
 </div>
 </div>
 </nav>
 </header>
-<main>
+<?php if (is_front_page() || is_home()): ?>
+<div class="page-header header-filter" data-parallax="true" style="background-image: url('<?php echo $wp_url; ?>/lib/images/bg2.jpg');">
+<div class="container">
+<div class="row">
+<div class="col-md-8 ml-auto mr-auto">
+<div class="brand">
+<h1>Material Kit.</h1>
+<h3>A Badass Bootstrap 4 UI Kit based on Material Design.</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+<?php endif; ?>
+<main class="main main-raised">

@@ -1,0 +1,14 @@
+.navbar {
+  &.navbar-transparent {
+    #search-form {
+      .form-control {
+        color: $white;
+      }
+
+      .btn {
+        background-color: $white;
+        color: #555;
+      }
+    }
+  }
+}
