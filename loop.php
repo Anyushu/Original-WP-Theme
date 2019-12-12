@@ -23,17 +23,19 @@ if (has_post_thumbnail()) {
 }
 $thumbnail = '<img class="card-img-top" src="'.$img_m.'" srcset="'.$img_m.' 1x, '.$img.' 2x" alt="'.$ttl.'">';
 ?>
-<div class="col-lg-4 col-md-6">
-<div class="card">
-<a href="<?php echo $permalink; ?>">
+<div class="col-lg-4 col-md-6 mb-4">
+<div class="card border-0 shadow-sm">
 <?php echo $thumbnail; ?>
 <div class="card-body">
-<h2 class="h3 text-dark font-weight-bold"><?php echo $ttl; ?></h2>
+<h2 class="h5 text-dark font-weight-bold card-text"><?php echo $ttl; ?></h2>
 <div class="text-right">
 <span class="badge badge-pill badge-primary"><?php echo $cat_name; ?></span>
 </div>
+<a class="stretched-link" href="<?php echo $permalink; ?>"></a>
 </div>
-</a>
+<div class="card-footer border-0">
+<time class="text-muted small" datetime="<?php the_modified_time('Y-m-d'); ?>"><i class="fas fa-history mr-2"></i><?php the_modified_time('Y.m.d'); ?></time>
+</div>
 </div>
 </div>
 <?php endwhile; ?>

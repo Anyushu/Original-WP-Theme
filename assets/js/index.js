@@ -2,5 +2,8 @@
 import '../scss/style.scss';
 
 // JSインポート
-import '@fortawesome/fontawesome-free/js/all.js';
-import 'bootstrap';
+import UIkit from 'uikit';
+import Icons from 'uikit/dist/js/uikit-icons';
+
+// loads the Icon plugin
+UIkit.use(Icons);
