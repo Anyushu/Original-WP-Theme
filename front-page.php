@@ -6,6 +6,7 @@ get_header(); ?>
 <div class="uk-container">
 <div class="uk-grid-divider" uk-grid>
 <div class="uk-width-expand@m">
+<h2>新着記事</h2>
 <?php get_template_part('loop'); ?>
 </div>
 <?php get_sidebar(); ?>

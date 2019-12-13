@@ -20,7 +20,11 @@ $wp_url = get_template_directory_uri();
 <a href="#menu" uk-icon="icon: list" uk-toggle></a>
 </div>
 <div class="uk-navbar-center">
+<?php if (is_front_page() || is_home()): ?>
+<h1 class="uk-margin-remove"><a class="uk-navbar-item" href="<?php echo $home; ?>"><img src="<?php echo $wp_url; ?>/lib/images/logo.svg" width="120" alt="<?php echo get_site_title(); ?>"></a></h1>
+<?php else: ?>
 <a class="uk-navbar-item" href="<?php echo $home; ?>"><img src="<?php echo $wp_url; ?>/lib/images/logo.svg" width="120" alt="<?php echo get_site_title(); ?>"></a>
+<?php endif; ?>
 </div>
 <div class="uk-navbar-right">
 <a href="#search" uk-search-icon uk-toggle></a>

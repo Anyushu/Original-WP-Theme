@@ -40,20 +40,18 @@ if (has_post_thumbnail()) {
     $img = $wp_url.'/lib/images/blog-1-1000x600.jpg';
 }
 ?>
-<div class="uk-card uk-card-hover uk-card-small">
-<a class="uk-link-toggle" href="<?php echo $permalink; ?>">
-<div class="uk-card-header">
-<div class="uk-grid-small uk-flex-stretch" uk-grid>
+<div class="uk-flex-middle" uk-grid>
 <div class="uk-width-auto">
-<img width="60" height="60" src="<?php echo $img; ?>" alt="<?php echo $ttl; ?>">
-</div>
-<div class="uk-width-expand">
-<h4 class="uk-text-small uk-card-title uk-margin-remove-bottom"><?php echo $ttl; ?></h4>
-<p class="uk-text-meta uk-margin-remove-top"><time datetime="<?php the_modified_time('Y-m-d'); ?>"><?php the_modified_time('Y.m.d'); ?></time></p>
-</div>
-</div>
-</div>
+<a class="uk-link-toggle" href="<?php echo $permalink; ?>">
+<img width="80" height="80" src="<?php echo $img; ?>" alt="<?php echo $ttl; ?>">
 </a>
+</div>
+<div class="uk-padding-small uk-width-expand">
+<a class="uk-link-toggle" href="<?php echo $permalink; ?>">
+<h4 class="uk-text-small uk-card-title uk-margin-remove-bottom"><?php echo $ttl; ?></h4>
+<p class="uk-text-meta uk-margin-remove"><time datetime="<?php the_modified_time('Y-m-d'); ?>"><?php the_modified_time('Y.m.d'); ?></time></p>
+</a>
+</div>
 </div>
 <?php
 endforeach;
@@ -84,20 +82,18 @@ if (has_post_thumbnail()) {
     $img = $wp_url.'/lib/images/blog-1-1000x600.jpg';
 }
 ?>
-<div class="uk-card uk-card-hover uk-card-small">
-<a class="uk-link-toggle" href="<?php echo $permalink; ?>">
-<div class="uk-card-header">
-<div class="uk-grid-small uk-flex-stretch" uk-grid>
+<div class="uk-flex-middle" uk-grid>
 <div class="uk-width-auto">
-<img width="60" height="60" src="<?php echo $img; ?>" alt="<?php echo $ttl; ?>">
-</div>
-<div class="uk-width-expand">
-<h4 class="uk-text-small uk-card-title uk-margin-remove-bottom"><?php echo $ttl; ?></h4>
-<p class="uk-text-meta uk-margin-remove-top"><time datetime="<?php the_modified_time('Y-m-d'); ?>"><?php the_modified_time('Y.m.d'); ?></time></p>
-</div>
-</div>
-</div>
+<a class="uk-link-toggle" href="<?php echo $permalink; ?>">
+<img width="80" height="80" src="<?php echo $img; ?>" alt="<?php echo $ttl; ?>">
 </a>
+</div>
+<div class="uk-padding-small uk-width-expand">
+<a class="uk-link-toggle" href="<?php echo $permalink; ?>">
+<h4 class="uk-text-small uk-card-title uk-margin-remove-bottom"><?php echo $ttl; ?></h4>
+<p class="uk-text-meta uk-margin-remove"><time datetime="<?php the_modified_time('Y-m-d'); ?>"><?php the_modified_time('Y.m.d'); ?></time></p>
+</a>
+</div>
 </div>
 <?php
 endforeach;

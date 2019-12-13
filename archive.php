@@ -3,12 +3,15 @@ $home = esc_url(home_url());
 $wp_url = get_template_directory_uri();
 get_header();
 ?>
-<div class="slider display-table center-text">
-<h2 class="h1 title display-table-cell">Tag：<?php single_cat_title(); ?></h2>
-</div>
-<section class="blog-area">
-<div class="container container-lg">
+<section class="uk-section-small">
+<div class="uk-container">
+<div class="uk-grid-divider" uk-grid>
+<div class="uk-width-expand@m">
+<h2><?php single_cat_title(); ?></h2>
 <?php get_template_part('loop'); ?>
+</div>
+<?php get_sidebar(); ?>
+</div>
 </div>
 </section>
 <?php get_footer();
