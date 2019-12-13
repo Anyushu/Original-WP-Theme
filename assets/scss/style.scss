@@ -1,2 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,500&display=swap&subset=japanese');
-@import 'uikit';
+@import 'custom';
+@import 'uikit/src/scss/variables-theme.scss';
+@import 'uikit/src/scss/mixins-theme.scss';
+@import 'uikit/src/scss/uikit-theme.scss';

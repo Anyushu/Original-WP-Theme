@@ -3,19 +3,33 @@ $home = esc_url(home_url());
 $wp_url = get_template_directory_uri();
 get_header();
 ?>
-<aside id="sidebar" class="col-md-4">
-<div class="popular-area sidebar-area bg-white p-md-4 p-3 mb-4">
-<h3 class="h5 title">今月の人気記事</h3>
-<ol class="popular-posts">
+<aside id="sidebar" class="uk-width-1-3@m">
+<div class="uk-margin-large-bottom">
+<h3 class="uk-heading-line uk-text-center"><span>カテゴリー</span></h3>
+<ul class="uk-list">
+<?php
+$args = [
+    'orderby' => 'id',
+    'order' => 'asc',
+    'hide_empty' => 0,
+];
+$categories = get_categories($args);
+foreach ($categories as $category):
+    $cat_link = get_category_link($category->term_id);
+    $cat_name = $category->name;
+?>
+<li><a class="uk-link-text" href="<?php echo $cat_link; ?>"><?php echo $cat_name; ?></a></li>
+<?php endforeach; ?>
+</ul>
+</div>
+<div class="uk-margin-large-bottom">
+<h3 class="uk-heading-line uk-text-center"><span>今月の人気記事</span></h3>
 <?php
 $args = get_popular_args('monthly', '5');
 $posts = get_posts($args);
 foreach ($posts as $post):
 $ttl = get_the_title();
 $permalink = get_the_permalink();
-$comment = get_comments_number(get_the_ID());
-$view = getPostViews(get_the_ID());
-$excerpt = get_the_excerpt();
 $img = '';
 if (has_post_thumbnail()) {
     $img = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
@@ -26,33 +40,40 @@ if (has_post_thumbnail()) {
     $img = $wp_url.'/lib/images/blog-1-1000x600.jpg';
 }
 ?>
-<li>
-<a href="<?php echo $permalink; ?>"><img src="<?php echo $img; ?>" alt="<?php echo $ttl; ?>"></a>
-<a href="<?php echo $permalink; ?>"><?php echo $ttl; ?></a>
-</li>
+<div class="uk-card uk-card-hover uk-card-small">
+<a class="uk-link-toggle" href="<?php echo $permalink; ?>">
+<div class="uk-card-header">
+<div class="uk-grid-small uk-flex-stretch" uk-grid>
+<div class="uk-width-auto">
+<img width="60" height="60" src="<?php echo $img; ?>" alt="<?php echo $ttl; ?>">
+</div>
+<div class="uk-width-expand">
+<h4 class="uk-text-small uk-card-title uk-margin-remove-bottom"><?php echo $ttl; ?></h4>
+<p class="uk-text-meta uk-margin-remove-top"><time datetime="<?php the_modified_time('Y-m-d'); ?>"><?php the_modified_time('Y.m.d'); ?></time></p>
+</div>
+</div>
+</div>
+</a>
+</div>
 <?php
 endforeach;
 wp_reset_query();
 ?>
-</ol>
 </div>
+
 <?php if (is_single()):
 foreach ((get_the_category()) as $cat) {
     $catid = $cat->cat_ID ;
     break ;
 }
 ?>
-<div class="popular-area sidebar-area bg-white p-md-4 p-3 mb-4">
-<h3 class="h5 title">関連記事</h3>
-<ol class="popular-posts">
+<div class="uk-margin-large-bottom">
+<h3 class="uk-heading-line uk-text-center"><span>関連記事</span></h3>
 <?php
-$posts = get_posts('numberposts=6&category='.$catid.'&orderby=rand&exclude='.get_the_ID());
+$posts = get_posts('numberposts=5&category='.$catid.'&orderby=rand&exclude='.get_the_ID());
 foreach ($posts as $post):
 $ttl = get_the_title();
 $permalink = get_the_permalink();
-$comment = get_comments_number(get_the_ID());
-$view = getPostViews(get_the_ID());
-$excerpt = get_the_excerpt();
 $img = '';
 if (has_post_thumbnail()) {
     $img = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
@@ -63,19 +84,29 @@ if (has_post_thumbnail()) {
     $img = $wp_url.'/lib/images/blog-1-1000x600.jpg';
 }
 ?>
-<li>
-<a href="<?php echo $permalink; ?>"><img src="<?php echo $img; ?>" alt="<?php echo $ttl; ?>"></a>
-<a href="<?php echo $permalink; ?>"><?php echo $ttl; ?></a>
-</li>
+<div class="uk-card uk-card-hover uk-card-small">
+<a class="uk-link-toggle" href="<?php echo $permalink; ?>">
+<div class="uk-card-header">
+<div class="uk-grid-small uk-flex-stretch" uk-grid>
+<div class="uk-width-auto">
+<img width="60" height="60" src="<?php echo $img; ?>" alt="<?php echo $ttl; ?>">
+</div>
+<div class="uk-width-expand">
+<h4 class="uk-text-small uk-card-title uk-margin-remove-bottom"><?php echo $ttl; ?></h4>
+<p class="uk-text-meta uk-margin-remove-top"><time datetime="<?php the_modified_time('Y-m-d'); ?>"><?php the_modified_time('Y.m.d'); ?></time></p>
+</div>
+</div>
+</div>
+</a>
+</div>
 <?php
 endforeach;
 wp_reset_query();
 ?>
-</ol>
 </div>
 <?php endif; ?>
-<div class="sidebar-area tag-area bg-white p-md-4 p-3 mb-4">
-<h3 class="h5 title">おすすめタグ</h3>
+<div class="uk-margin-large-bottom">
+<h3 class="uk-heading-line uk-text-center"><span>おすすめタグ</span></h3>
 <ul>
 <?php
 $args=array(
@@ -92,5 +123,4 @@ if ($posttags) {
 ?>
 </ul>
 </div>
-<?php // dynamic_sidebar('side-bar'); ?>
 </aside>

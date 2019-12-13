@@ -1,4 +1,31 @@
-$theme-colors: (
-  'primary': #247ba0,
-);
-$font-family-sans-serif: 'Noto Sans JP', sans-serif;
+//
+//
+// Typography
+//
+$global-font-family: 'Noto Sans JP', sans-serif;
+/*
+$primary: #247ba0;
+$green: #70c1b3;
+$middle: #b2dbbf;
+$yellow: #f3ffbd;
+$red: #ff1654;
+*/
+//
+// Colors
+//
+$global-color: #666;
+$global-emphasis-color: #333;
+$global-muted-color: #999;
+$global-link-color: #247ba0;
+$global-link-hover-color: #144a61;
+$global-inverse-color: #fff;
+//
+// Backgrounds
+//
+$global-background: #fff;
+$global-muted-background: #f8f8f8;
+$global-primary-background: #247ba0;
+$global-secondary-background: #333;
+$global-success-background: #70c1b3;
+$global-warning-background: #faa05a;
+$global-danger-background: #ff1654;

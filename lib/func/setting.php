@@ -69,7 +69,7 @@ function dequeue_plugins_style()
 {
     wp_dequeue_style('wp-block-library');
 }
-add_action('wp_enqueue_scripts', 'dequeue_plugins_style', 9999);
+// add_action('wp_enqueue_scripts', 'dequeue_plugins_style', 9999);
 
 // インラインCSSの消去
 function remove_recent_comments_style()
@@ -119,42 +119,3 @@ function my_the_excerpt($postContent)
     return $postContent;
 }
 add_filter('get_the_excerpt', 'my_the_excerpt');
-
-// エディタースタイル
-if (!function_exists('initialize_tinymce_styles')) {
-    function initialize_tinymce_styles($init_array)
-    {
-        $style_formats = array(
-      array(
-        'title' => 'ボタン',
-        'inline' => 'span',
-        'classes' => 'rich-btn',
-      ),
-      array(
-        'title' => '赤文字',
-        'inline' => 'span',
-        'classes' => 'markerPink',
-      ),
-      array(
-        'title' => '注意',
-        'block' => 'div',
-        'classes' => 'exclamationBox',
-      ),
-    );
-        $init_array['style_formats'] = json_encode($style_formats);
-        $init_array['table_resize_bars'] = false;
-        $init_array['object_resizing'] = 'img';
-
-        return $init_array;
-    }
-}
-add_filter('tiny_mce_before_init', 'initialize_tinymce_styles', 10000);
-
-function extend_tiny_mce_before_init($mce_init)
-{
-    $mce_init['cache_suffix'] = 'v='.time();
-
-    return $mce_init;
-}
-add_filter('tiny_mce_before_init', 'extend_tiny_mce_before_init');
-

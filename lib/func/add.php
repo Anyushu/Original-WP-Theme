@@ -19,44 +19,17 @@ function customize_manage_posts_custom_column($column_name, $post_id)
 add_action('manage_posts_custom_column', 'customize_manage_posts_custom_column', 10, 2);
 
 // サイト名取得
-function get_site_ttl()
+function get_site_title()
 {
     return get_bloginfo('name');
 }
-
-// 人気記事出力用
-function getPostViews($postID)
-{
-    $count_key = 'post_views_count';
-    $count = get_post_meta($postID, $count_key, true);
-    if ($count == '') {
-        delete_post_meta($postID, $count_key);
-        add_post_meta($postID, $count_key, '0');
-        return '0';
-    }
-    return $count;
-}
-function setPostViews($postID)
-{
-    $count_key = 'post_views_count';
-    $count = get_post_meta($postID, $count_key, true);
-    if ($count=='') {
-        $count = 0;
-        delete_post_meta($postID, $count_key);
-        add_post_meta($postID, $count_key, '0');
-    } else {
-        $count++;
-        update_post_meta($postID, $count_key, $count);
-    }
-}
-remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
 // ページネーション
 function pagination($pages = '', $range = 1)
 {
     $showitems = ($range * 2)+1;
-    $text_before = '<i class="fas fa-angle-left"></i><span class="sr-only">Previous</span>';
-    $text_next = '<i class="fas fa-angle-right"></i><span class="sr-only">Next</span>';
+    $text_before = '<span uk-pagination-previous></span>';
+    $text_next = '<span uk-pagination-next></span>';
     global $paged;
     if (empty($paged)) {
         $paged = 1;
@@ -69,21 +42,21 @@ function pagination($pages = '', $range = 1)
         }
     }
     if (1 != $pages) {
-        echo '<nav aria-label="Page navigation example">'."\n".'<ul class="pagination justify-content-center m-0 p-0">'."\n";
+        echo '<ul class="uk-margin-large-top uk-pagination uk-flex-center">'."\n";
         if ($paged > 1 && $showitems < $pages) {
-            echo '<li class="page-item">'."<a class=\"page-link\" href='".get_pagenum_link($paged - 1)."'>{$text_before}</a></li>";
+            echo '<li>'."<a class=\"page-link\" href='".get_pagenum_link($paged - 1)."'>{$text_before}</a></li>";
         }
         for ($i=1; $i <= $pages; $i++) {
             if (1 != $pages &&(!($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems)) {
                 echo ($paged == $i)?
-                '<li class="page-item active"><span class="page-link">'.$i.'</span></li>'."\n":
-                '<li class="page-item"><a class="page-link" href="'.get_pagenum_link($i).'">'.$i.'</a></li>'."\n";
+                '<li class="uk-active"><span>'.$i.'</span></li>'."\n":
+                '<li><a href="'.get_pagenum_link($i).'">'.$i.'</a></li>'."\n";
             }
         }
         if ($paged < $pages && $showitems < $pages) {
-            echo '<li class="page-item">'."<a class=\"page-link\" href=\"".get_pagenum_link($paged + 1)."\">{$text_next}</a></li>";
+            echo '<li>'."<a href=\"".get_pagenum_link($paged + 1)."\">{$text_next}</a></li>";
         }
-        echo '</ul>'."\n".'</nav>'."\n";
+        echo '</ul>'."\n";
     }
 }
 
@@ -195,24 +168,23 @@ function get_popular_args($range= "month", $limit = 5)
           order_by="views"
           post_type="post"
           stats_comments=0
-          stats_views=1
-            ';
+          stats_views=1';
     $atts_2 = ' range='. $range;
     $atts_3 = ' limit='. $limit;
     $shortcode .= ' ' . $atts . $atts_2 . $atts_3 . ']';
     $result = explode(",", strip_tags(do_shortcode($shortcode)));
-    $ranked_post_ids = array();
+    $ranked_post_ids = [];
     foreach ($result as $_url) {
         if (!empty($_url) && trim($_url) != '') {
             $id_string = url_to_postid($_url);
             array_push($ranked_post_ids, intval($id_string));
         }
     }
-    $args = array(
-    'posts_per_page' => $limit,
-    'post__in' => $ranked_post_ids,
-    'orderby' => 'post__in'
-  );
+    $args = [
+        'posts_per_page' => $limit,
+        'post__in' => $ranked_post_ids,
+        'orderby' => 'post__in'
+    ];
 
     return $args;
 }
