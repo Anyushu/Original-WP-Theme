@@ -49,7 +49,7 @@ if (has_post_thumbnail()) {
 <div class="uk-padding-small uk-width-expand">
 <a class="uk-link-toggle" href="<?php echo $permalink; ?>">
 <h4 class="uk-text-small uk-card-title uk-margin-remove-bottom"><?php echo $ttl; ?></h4>
-<p class="uk-text-meta uk-margin-remove"><time datetime="<?php the_modified_time('Y-m-d'); ?>"><?php the_modified_time('Y.m.d'); ?></time></p>
+<p class="uk-text-meta uk-margin-small-top uk-margin-remove-bottom"><time datetime="<?php the_modified_time('Y-m-d'); ?>"><?php the_modified_time('Y.m.d'); ?></time></p>
 </a>
 </div>
 </div>
@@ -91,7 +91,7 @@ if (has_post_thumbnail()) {
 <div class="uk-padding-small uk-width-expand">
 <a class="uk-link-toggle" href="<?php echo $permalink; ?>">
 <h4 class="uk-text-small uk-card-title uk-margin-remove-bottom"><?php echo $ttl; ?></h4>
-<p class="uk-text-meta uk-margin-remove"><time datetime="<?php the_modified_time('Y-m-d'); ?>"><?php the_modified_time('Y.m.d'); ?></time></p>
+<p class="uk-text-meta uk-margin-small-top uk-margin-remove-bottom"><time datetime="<?php the_modified_time('Y-m-d'); ?>"><?php the_modified_time('Y.m.d'); ?></time></p>
 </a>
 </div>
 </div>
