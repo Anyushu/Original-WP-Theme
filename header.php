@@ -33,21 +33,13 @@ $wp_url = get_template_directory_uri();
 <div id="menu" uk-offcanvas="mode: push" class="uk-offcanvas">
 <div class="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide">
 <button class="uk-offcanvas-close uk-close uk-icon" type="button" uk-close></button>
-<h3>カテゴリー</h3>
 <ul class="uk-nav uk-nav-default">
+<li><a href="<?php echo $home; ?>">トッページ</a></li>
 <?php
-$args = [
-    'orderby' => 'id',
-    'order' => 'asc',
-    'hide_empty' => 0,
-];
-$categories = get_categories($args);
-foreach ($categories as $category):
-    $cat_link = get_category_link($category->term_id);
-    $cat_name = $category->name;
-?>
-<li><a href="<?php echo $cat_link; ?>"><?php echo $cat_name; ?></a></li>
-<?php endforeach; ?>
+$pages = get_page_list();
+foreach ($pages as $key => $page): ?>
+<li><a href="<?php echo get_page_link($page->ID); ?>"><?php echo $page->post_title; ?></a></li>
+<?php endforeach; wp_reset_query(); ?>
 </ul>
 </div>
 </div>
