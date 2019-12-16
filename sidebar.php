@@ -5,7 +5,7 @@ get_header();
 ?>
 <aside id="sidebar" class="uk-width-1-3@m">
 <div class="uk-margin-large-bottom">
-<h3 class="uk-heading-line uk-text-center"><span>カテゴリー</span></h3>
+<h3 class="uk-heading-line uk-text-center uk-text-lead"><span>カテゴリー</span></h3>
 <ul class="uk-list">
 <?php
 $args = [
@@ -23,7 +23,7 @@ foreach ($categories as $category):
 </ul>
 </div>
 <div class="uk-margin-large-bottom">
-<h3 class="uk-heading-line uk-text-center"><span>今月の人気記事</span></h3>
+<h3 class="uk-heading-line uk-text-center uk-text-lead"><span>今月の人気記事</span></h3>
 <?php
 $args = get_popular_args('monthly', '5');
 $posts = get_posts($args);
@@ -66,7 +66,7 @@ foreach ((get_the_category()) as $cat) {
 }
 ?>
 <div class="uk-margin-large-bottom">
-<h3 class="uk-heading-line uk-text-center"><span>関連記事</span></h3>
+<h3 class="uk-heading-line uk-text-center uk-text-lead"><span>関連記事</span></h3>
 <?php
 $posts = get_posts('numberposts=5&category='.$catid.'&orderby=rand&exclude='.get_the_ID());
 foreach ($posts as $post):
@@ -102,7 +102,7 @@ wp_reset_query();
 </div>
 <?php endif; ?>
 <div class="uk-margin-large-bottom">
-<h3 class="uk-heading-line uk-text-center"><span>おすすめタグ</span></h3>
+<h3 class="uk-heading-line uk-text-center uk-text-lead"><span>おすすめタグ</span></h3>
 <ul>
 <?php
 $args=array(
@@ -118,5 +118,27 @@ if ($posttags) {
 }
 ?>
 </ul>
+</div>
+<div class="uk-margin-large-bottom">
+<div class="uk-card uk-card-default uk-card-small uk-box-shadow-small">
+<div class="uk-card-header">
+<div class="uk-grid-small uk-flex-middle" uk-grid>
+<div class="uk-width-auto">
+<img class="uk-border-circle" width="40" height="40" src="<?php echo $wp_url; ?>/lib/images/me.jpg" alt="Anyushuについて">
+</div>
+<div class="uk-width-expand">
+<h3 class="uk-card-title uk-margin-remove-bottom">Anyushuについて</h3>
+</div>
+</div>
+</div>
+<div class="uk-card-body">
+<p>主に映画とWebについての記事を投稿するブログ「Anyushu」です。現役のWebエンジニアが記事を更新しています。</p>
+</div>
+<div class="uk-card-footer">
+<a href="https://twitter.com/Anyushu" class="uk-icon-button uk-margin-small-right" uk-icon="twitter" target="_blank"></a>
+<a href="https://www.facebook.com/Anyushu2017" class="uk-icon-button uk-margin-small-right" uk-icon="facebook" target="_blank"></a>
+<a href="https://www.instagram.com/anyushu2017/" class="uk-icon-button" uk-icon="instagram" target="_blank"></a>
+</div>
+</div>
 </div>
 </aside>

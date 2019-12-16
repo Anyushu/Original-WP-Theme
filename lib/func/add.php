@@ -87,11 +87,10 @@ function nlink_scode($atts)
         $img_tag = "<img src='".$img[0]."' alt='{$title}'".">";
     }
     $nlink .='
-<div class="blog-card">
-<a href="'.$url.'" target="_blank">
+<div class="blog-card uk-box-shadow-small uk-box-shadow-hover-medium">
+<a class="uk-link-toggle" href="'.$url.'" target="_blank">
 <div class="blog-card-thumbnail">'.$img_tag.'</div>
 <div class="blog-card-content"><p>'.$title.'</p></div>
-<span class="clear"></span>
 </a>
 </div>';
     return $nlink;
@@ -212,7 +211,7 @@ function anyushu_breadcrumb($args = [])
     $args = wp_parse_args($args, $defaults);
     extract($args, EXTR_SKIP);
     if (!is_home() && !is_admin()) {
-        $str.= '<ul class="breadcrumb__list uk-breadcrumb">';
+        $str.= '<ul class="breadcrumb__list uk-breadcrumb uk-text-truncate uk-text-nowrap">';
         $str.= '<li class="breadcrumb__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'. home_url() .'/" itemprop="url"><span class="icon-home" itemprop="title">'. $home .'</span></a></li>';
         $my_taxonomy = get_query_var('taxonomy');
         $cpt = get_query_var('post_type');
@@ -227,7 +226,7 @@ function anyushu_breadcrumb($args = [])
                     $str.='<li class="breadcrumb__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'. get_term_link($ancestor, $my_tax->taxonomy) .'" itemprop="url"><span itemprop="title">'. get_term($ancestor, $my_tax->taxonomy)->name .'</span></a></li>';
                 }
             }
-            $str.='<li class="breadcrumb__item">'. $my_tax->name.'</li>';
+            $str.='<li class="breadcrumb__item"><span>'. $my_tax->name.'</span></li>';
         } elseif (is_category()) {
             $cat = get_queried_object();
             if ($cat->parent != 0) {
@@ -236,10 +235,10 @@ function anyushu_breadcrumb($args = [])
                     $str.='<li class="breadcrumb__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'. get_category_link($ancestor) .'" itemprop="url"><span itemprop="title">'. get_cat_name($ancestor) .'</span></a></li>';
                 }
             }
-            $str.='<li class="breadcrumb__item">'. $cat->name.'</li>';
+            $str.='<li class="breadcrumb__item"><span>'. $cat->name.'</span></li>';
         } elseif (is_post_type_archive()) {
             $cpt = get_query_var('post_type');
-            $str.='<li class="breadcrumb__item">'. get_post_type_object($cpt)->label.'</li>';
+            $str.='<li class="breadcrumb__item"><span>'. get_post_type_object($cpt)->label.'</span></li>';
         } elseif ($cpt && is_singular($cpt)) {
             $taxes = get_object_taxonomies($cpt);
             $mytax = $taxes[0];
@@ -253,7 +252,7 @@ function anyushu_breadcrumb($args = [])
                 }
             }
             $str.='<li class="breadcrumb__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'. get_term_link($tax, $mytax).'" itemprop="url"><span itemprop="title">'. $tax->name.'</span></a></li>';
-            $str.= '<li class="breadcrumb__item">'. $post->post_title .'</li>';
+            $str.= '<li class="breadcrumb__item"><span>'. $post->post_title .'</span></li>';
         } elseif (is_single()) {
             $categories = get_the_category($post->ID);
             $cat = get_youngest_cat($categories);
@@ -264,7 +263,7 @@ function anyushu_breadcrumb($args = [])
                 }
             }
             $str.='<li class="breadcrumb__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'. get_category_link($cat->term_id). '" itemprop="url"><span itemprop="title">'. $cat->cat_name.'</span></a></li>';
-            $str.= '<li class="breadcrumb__item">'. $post->post_title .'</li>';
+            $str.= '<li class="breadcrumb__item"><span>'. $post->post_title .'</span></li>';
         } elseif (is_page()) {
             if ($post->post_parent != 0) {
                 $ancestors = array_reverse(get_post_ancestors($post->ID));
@@ -272,7 +271,7 @@ function anyushu_breadcrumb($args = [])
                     $str.='<li class="breadcrumb__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'. get_permalink($ancestor).'" itemprop="url"><span itemprop="title">'. get_the_title($ancestor) .'</span></a></li>';
                 }
             }
-            $str.= '<li class="breadcrumb__item">'. $post->post_title .'</li>';
+            $str.= '<li class="breadcrumb__item"><span>'. $post->post_title .'</span></li>';
         } elseif (is_date()) {
             if (get_query_var('day') != 0) {
                 $str.='<li class="breadcrumb__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'. get_year_link(get_query_var('year')). '" itemprop="url"><span itemprop="title">'.get_query_var('year'). '年</span></a></li>';
@@ -285,17 +284,17 @@ function anyushu_breadcrumb($args = [])
                 $str.='<li class="breadcrumb__item">'. get_query_var('year') .'年</li>';
             }
         } elseif (is_search()) {
-            $str.='<li class="breadcrumb__item">「'. get_search_query() .'」'. $search .'</li>';
+            $str.='<li class="breadcrumb__item"><span>「'. get_search_query() .'」'. $search .'</span></li>';
         } elseif (is_author()) {
-            $str .='<li class="breadcrumb__item">'. $author.get_the_author_meta('display_name', get_query_var('author')).'</li>';
+            $str .='<li class="breadcrumb__item"><span>'. $author.get_the_author_meta('display_name', get_query_var('author')).'</span></li>';
         } elseif (is_tag()) {
-            $str.='<li class="breadcrumb__item">'. $tag.single_tag_title('', false). '</li>';
+            $str.='<li class="breadcrumb__item"><span>'. $tag.single_tag_title('', false). '</span></li>';
         } elseif (is_attachment()) {
-            $str.= '<li class="breadcrumb__item">'. $post->post_title .'</li>';
+            $str.= '<li class="breadcrumb__item"><span>'. $post->post_title .'</span></li>';
         } elseif (is_404()) {
-            $str.='<li class="breadcrumb__item">'.$notfound.'</li>';
+            $str.='<li class="breadcrumb__item"><span>'.$notfound.'</span></li>';
         } else {
-            $str.='<li class="breadcrumb__item">'. wp_title('', true) .'</li>';
+            $str.='<li class="breadcrumb__item"><span>'. wp_title('', true) .'</span></li>';
         }
         $str.='</ul>';
     }

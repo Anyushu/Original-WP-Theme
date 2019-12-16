@@ -1,0 +1,19 @@
+.post-main {
+  h2 {
+    box-sizing: border-box;
+    padding: 0.5em;
+    background-color: $global-muted-background;
+    border-bottom: solid 3px $global-primary-background;
+  }
+
+  h3 {
+    box-sizing: border-box;
+    padding: 0.25em 0.5em;
+    background: transparent;
+    border-left: solid 3px $global-primary-background;
+  }
+
+  strong {
+    background: linear-gradient(transparent 85%, rgba($global-danger-background, 0.7) 85%);
+  }
+}

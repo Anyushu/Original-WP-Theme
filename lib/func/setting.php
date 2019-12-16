@@ -64,13 +64,6 @@ function my_delete_local_jquery()
 }
 add_action('wp_enqueue_scripts', 'my_delete_local_jquery');
 
-// Gutenberg用のCSSの消去
-function dequeue_plugins_style()
-{
-    wp_dequeue_style('wp-block-library');
-}
-// add_action('wp_enqueue_scripts', 'dequeue_plugins_style', 9999);
-
 // インラインCSSの消去
 function remove_recent_comments_style()
 {
@@ -105,12 +98,15 @@ function register_my_menu()
 }
 add_action('init', 'register_my_menu');
 
-// エディタースタイル追加
-function wpdocs_theme_add_editor_styles()
+// エディタースタイル
+function gutenberg_support_setup()
 {
+    add_theme_support('wp-block-styles');
+    add_theme_support('align-wide');
+    add_theme_support('editor-styles');
     add_editor_style('editor-style.css');
 }
-add_action('admin_init', 'wpdocs_theme_add_editor_styles');
+add_action('after_setup_theme', 'gutenberg_support_setup');
 
 // 抜粋文
 function my_the_excerpt($postContent)
