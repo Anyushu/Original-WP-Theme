@@ -18,7 +18,8 @@ if (has_post_thumbnail()) {
     $img = get_the_post_thumbnail_url($id, 'full');
     $img_m = get_the_post_thumbnail_url($id, 'large');
 }
-$thumbnail = '<img class="uk-width-expand" src="'.$img_m.'" srcset="'.$img_m.' 1x, '.$img.' 2x" alt="'.$ttl.'">'; ?>
+$thumbnail = '<img class="uk-width-expand" src="'.$img_m.'" srcset="'.$img_m.' 1x, '.$img.' 2x" alt="'.$ttl.'">';
+?>
 <article>
 <a class="uk-link-toggle" href="<?php echo $permalink; ?>">
 <div class="uk-card uk-card-default uk-box-shadow-hover-medium uk-card-small uk-box-shadow-small">
@@ -26,8 +27,8 @@ $thumbnail = '<img class="uk-width-expand" src="'.$img_m.'" srcset="'.$img_m.' 1
 <?php echo $thumbnail; ?>
 </div>
 <div class="uk-card-body">
-<p class="uk-text-meta"><?php echo $cat_name; ?></p>
 <h3 class="uk-card-title uk-margin-remove-top"><?php echo $ttl; ?></h3>
+<p class="uk-margin-remove uk-text-right"><span class="uk-label"><?php echo $cat_name; ?></span></p>
 </div>
 </div>
 </a>

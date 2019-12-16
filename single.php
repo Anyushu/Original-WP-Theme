@@ -27,7 +27,7 @@ if (has_post_thumbnail()) {
 <div class="uk-article-meta uk-flex">
 <time class="uk-margin-right" datetime="<?php the_modified_time('Y-m-d'); ?>"><span class="uk-margin-small-right" uk-icon="history"></span><?php the_modified_time('Y.m.d'); ?></time>
 <p class="uk-margin-remove-top uk-margin-remove-bottom uk-margin-right">
-<a class="uk-link-muted" href="<?php echo $cat_slug; ?>"><span class="uk-margin-small-right" uk-icon="folder"></span><?php echo $cat_name; ?></a>
+<a class="uk-link-text" href="<?php echo $cat_slug; ?>"><span class="uk-margin-small-right" uk-icon="folder"></span><?php echo $cat_name; ?></a>
 </p>
 </div>
 <?php if ($img != ''): ?>

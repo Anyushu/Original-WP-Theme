@@ -33,11 +33,6 @@ $permalink = get_the_permalink();
 $img = '';
 if (has_post_thumbnail()) {
     $img = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
-    if ($img == false) {
-        $img = $wp_url.'/lib/images/blog-1-1000x600.jpg';
-    }
-} else {
-    $img = $wp_url.'/lib/images/blog-1-1000x600.jpg';
 }
 ?>
 <div class="uk-flex-middle" uk-grid>
@@ -103,7 +98,7 @@ wp_reset_query();
 <?php endif; ?>
 <div class="uk-margin-large-bottom">
 <h3 class="uk-heading-line uk-text-center uk-text-lead"><span>おすすめタグ</span></h3>
-<ul>
+<div class="uk-flex">
 <?php
 $args=array(
     'orderby' => 'count',
@@ -113,11 +108,11 @@ $args=array(
 $posttags = get_tags($args);
 if ($posttags) {
     foreach ($posttags as $tag) {
-        echo '<li><a href="'.get_tag_link($tag->term_id).'">'.$tag->name.'</a></li>';
+        echo '<a class="uk-link-text uk-text-small uk-display-inline-block uk-margin-small-top uk-margin-small-right" href="'.get_tag_link($tag->term_id).'"><span uk-icon="tag"></span>'.$tag->name.'</a>';
     }
 }
 ?>
-</ul>
+</div>
 </div>
 <div class="uk-margin-large-bottom">
 <div class="uk-card uk-card-default uk-card-small uk-box-shadow-small">
