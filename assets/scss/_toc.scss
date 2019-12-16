@@ -1,0 +1,32 @@
+$toc-base-sise: 1rem;
+
+.toc {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  margin: $toc-base-sise*2 auto;
+  padding: $toc-base-sise*1.5;
+  min-width: $toc-base-sise*18;
+  max-width: 100%;
+
+  h2 {
+    font-size: $toc-base-sise;
+    font-weight: bold;
+    margin: 0 auto $toc-base-sise;
+  }
+
+  ol {
+    padding-left: $toc-base-sise;
+  }
+
+  > ol {
+    margin-bottom: 0;
+
+    li {
+      a {
+        font-size: 0.875rem;
+      }
+    }
+  }
+}

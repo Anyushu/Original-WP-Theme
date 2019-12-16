@@ -35,7 +35,10 @@ if (has_post_thumbnail()) {
 <img data-src="<?php echo $img_m; ?>" alt="<?php echo $ttl; ?>" uk-img>
 </figure>
 <?php endif; ?>
+<div id="toc" class="toc uk-section-muted"></div>
+<div class="main-article">
 <?php the_content(); ?>
+</div>
 </article>
 <?php get_sidebar(); ?>
 </div>

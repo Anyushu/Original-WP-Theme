@@ -17,13 +17,6 @@ $img_m = '';
 if (has_post_thumbnail()) {
     $img = get_the_post_thumbnail_url($id, 'full');
     $img_m = get_the_post_thumbnail_url($id, 'large');
-    if ($img == false) {
-        $img = $wp_url.'/lib/images/blog-1-1000x600.jpg';
-        $img_m = $wp_url.'/lib/images/blog-1-1000x600.jpg';
-    }
-} else {
-    $img = $wp_url.'/lib/images/blog-1-1000x600.jpg';
-    $img_m = $wp_url.'/lib/images/blog-1-1000x600.jpg';
 }
 $thumbnail = '<img class="uk-width-expand" src="'.$img_m.'" srcset="'.$img_m.' 1x, '.$img.' 2x" alt="'.$ttl.'">'; ?>
 <article>

@@ -11,7 +11,7 @@ if (isset($_GET['s'])) {
 <div class="uk-grid-divider" uk-grid>
 <div class="uk-width-expand@m">
 <h2 class="uk-heading-line uk-text-lead"><span>検索：<?php echo $s; ?></span></h2>
-<?php get_template_part('loop'); ?>
+<?php get_template_part('template/loop'); ?>
 </div>
 <?php get_sidebar(); ?>
 </div>

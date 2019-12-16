@@ -8,7 +8,7 @@ get_header();
 <div class="uk-grid-divider" uk-grid>
 <div class="uk-width-expand@m">
 <h2 class="uk-heading-line uk-text-lead"><span><?php single_cat_title(); ?></span></h2>
-<?php get_template_part('loop'); ?>
+<?php get_template_part('template/loop'); ?>
 </div>
 <?php get_sidebar(); ?>
 </div>

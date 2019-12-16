@@ -1,4 +1,10 @@
-.post-main {
+$border-color: #e5e5e5;
+
+.main-article {
+  position: relative;
+  width: 100%;
+  height: 10%;
+
   h2 {
     box-sizing: border-box;
     padding: 0.5em;
@@ -15,5 +21,64 @@
 
   strong {
     background: linear-gradient(transparent 85%, rgba($global-danger-background, 0.7) 85%);
+  }
+
+  pre {
+    &.wp-block-code {
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+    }
+  }
+
+  blockquote {
+    &.wp-block-quote {
+      box-sizing: border-box;
+      padding: 1rem 1.5rem;
+      border-left: 3px solid $global-color;
+      background-color: $global-muted-background;
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .wp-block-table {
+    table {
+      border-collapse: collapse;
+
+      td,
+      th {
+        border: solid 1px $border-color;
+      }
+    }
+  }
+  /* Gutenberg系 */
+  .wp-block-button,
+  .wp-block-columns,
+  .wp-block-embed {
+    margin: 1.5rem 0;
+  }
+
+  .is-provider-youtube {
+    .iframe {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  /* 外部CSSのOverWrite */
+  .hljs {
+    padding: 1rem;
   }
 }
