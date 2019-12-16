@@ -3,31 +3,21 @@ $home = esc_url(home_url());
 $wp_url = get_template_directory_uri();
 get_header();
 the_post();
+$id = get_the_ID();
 $ttl = get_the_title();
 $permalink = get_the_permalink();
 ?>
-<div class="slider">
-<div class="display-table  center-text">
-<h2 class="h1 title display-table-cell">404 Not found！</h2>
-</div>
-</div>
-<section class="post-area section">
-<div class="container">
-<div class="row">
-<div class="col-lg-8 col-md-12 no-right-padding">
-<div class="main-post">
-<div class="blog-post-inner">
-<h2 class="title post-ttl">
-<a href="<?php echo $permalink; ?>">
-<?php echo $ttl; ?>
-</a>
-</h2>
-<div class="post-inner content">
-<h2 class="h4">お探しのページは見つかりませんでした。</h2>
-</div>
-</div>
-</div>
-</div>
+<section class="uk-section-small">
+<div class="uk-container">
+<div class="uk-grid-divider" uk-grid>
+<section class="uk-article uk-width-expand@m">
+<h2 class="uk-article-title">404 Not found！</h2>
+<p>お探しのページは見つかりませんでした。</p>
+<form class="uk-search uk-search-default" action="<?php echo $home; ?>" method="get">
+<button class="uk-search-icon-flip" type="submit" uk-search-icon></button>
+<input class="uk-search-input" type="search" name="s" placeholder="記事を探す">
+</form>
+</section>
 <?php get_sidebar(); ?>
 </div>
 </div>
