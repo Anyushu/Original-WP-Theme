@@ -51,8 +51,8 @@ foreach ($pages as $key => $page): ?>
 <div id="search" class="uk-modal-full uk-modal" uk-modal>
 <div class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle" uk-height-viewport>
 <button class="uk-modal-close-full" type="button" uk-close></button>
-<form class="uk-search uk-search-large">
-<input class="uk-search-input uk-text-center" type="search" placeholder="Search..." autofocus>
+<form class="uk-search uk-search-large" action="<?php echo $home; ?>" method="get">
+<input class="uk-search-input uk-text-center" type="search" name="s" placeholder="Search..." autofocus>
 </form>
 </div>
 </div>
