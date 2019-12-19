@@ -101,8 +101,6 @@ add_action('init', 'register_my_menu');
 // エディタースタイル
 function gutenberg_support_setup()
 {
-    add_theme_support('wp-block-styles');
-    add_theme_support('align-wide');
     add_theme_support('editor-styles');
     add_editor_style('editor-style.css');
 }
@@ -115,21 +113,3 @@ function my_the_excerpt($postContent)
     return $postContent;
 }
 add_filter('get_the_excerpt', 'my_the_excerpt');
-
-
-/**
- * Modify YouTube oEmbeds to use youtube-nocookie.com
- *
- * @param $cached_html
- * @param $url
- *
- * @return string
- */
-// function filter_youtube_embed($cached_html, $url = null)
-// {
-//     if (strpos($url, 'youtube')) {
-//         $cached_html = preg_replace('/youtube\.com\/(v|embed)\//s', 'youtube-nocookie.com/$1/', $cached_html);
-//     }
-//     return $cached_html;
-// }
-// add_filter('embed_oembed_html', 'filter_youtube_embed', 10, 2);

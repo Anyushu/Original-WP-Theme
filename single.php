@@ -38,6 +38,8 @@ if (has_post_thumbnail()) {
 <div id="toc" class="toc uk-section-muted"></div>
 <div class="main-article">
 <?php the_content(); ?>
+<hr class="uk-divider-icon">
+<?php echo do_shortcode('[addtoany]'); ?>
 </div>
 </article>
 <?php get_sidebar(); ?>

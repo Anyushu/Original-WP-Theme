@@ -5,6 +5,13 @@ get_header();
 ?>
 <aside id="sidebar" class="uk-width-1-3@m">
 <div class="uk-margin-large-bottom">
+<h3 class="uk-heading-line uk-text-center uk-text-lead"><span>当サイトの運用サーバー</span></h3>
+<a class="uk-display-block uk-text-center" href="https://px.a8.net/svt/ejp?a8mat=35PWPM+E22GZ6+CO4+1050F5" rel="nofollow">
+<img src="https://www25.a8.net/svt/bgt?aid=191005402850&wid=001&eno=01&mid=s00000001642006070000&mc=1" alt="wpX Speed">
+</a>
+<img class="uk-display-block" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=35PWPM+E22GZ6+CO4+1050F5" alt="wpX Speed">
+</div>
+<div class="uk-margin-large-bottom">
 <h3 class="uk-heading-line uk-text-center uk-text-lead"><span>カテゴリー</span></h3>
 <ul class="uk-list">
 <?php
@@ -98,7 +105,7 @@ wp_reset_query();
 <?php endif; ?>
 <div class="uk-margin-large-bottom">
 <h3 class="uk-heading-line uk-text-center uk-text-lead"><span>おすすめタグ</span></h3>
-<div class="uk-flex">
+<div class="uk-flex uk-flex-wrap">
 <?php
 $args=array(
     'orderby' => 'count',

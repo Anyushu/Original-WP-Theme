@@ -7,9 +7,24 @@ $wp_url = get_template_directory_uri();
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="p:domain_verify" content="5f019d2908ce499cbe840ea8100c429a">
+<meta name="msvalidate.01" content="C592CDA10B30CD7B306D683352521918">
+<?php if (!is_user_logged_in()): ?>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NN3ZTBZ');</script>
+<?php endif; ?>
 <?php wp_head(); ?>
 </head>
 <body>
+<?php if (!is_user_logged_in()): ?>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NN3ZTBZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<?php endif; ?>
 <!-- header -->
 <header uk-sticky="show-on-up: true; animation: uk-animation-slide-top; bottom: #bottom">
 <div class="uk-offcanvas-content">

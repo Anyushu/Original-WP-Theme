@@ -15,7 +15,9 @@ $permalink = get_the_permalink();
 <div class="uk-article-meta">
 <time datetime="<?php the_modified_time('Y-m-d'); ?>"><span class="uk-margin-small-right" uk-icon="history"></span><?php the_modified_time('Y.m.d'); ?></time>
 </div>
+<div class="main-article uk-margin-top">
 <?php the_content(); ?>
+</div>
 </section>
 <?php get_sidebar(); ?>
 </div>
