@@ -42,7 +42,7 @@ if (has_post_thumbnail()) {
     $img = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
 }
 ?>
-<div class="uk-flex-middle" uk-grid>
+<div class="uk-flex-middle uk-margin-remove-top" uk-grid>
 <div class="uk-width-auto">
 <a class="uk-link-toggle" href="<?php echo $permalink; ?>">
 <img width="80" height="80" src="<?php echo $img; ?>" alt="<?php echo $ttl; ?>">
@@ -84,7 +84,7 @@ if (has_post_thumbnail()) {
     $img = $wp_url.'/lib/images/blog-1-1000x600.jpg';
 }
 ?>
-<div class="uk-flex-middle" uk-grid>
+<div class="uk-flex-middle uk-margin-remove-top" uk-grid>
 <div class="uk-width-auto">
 <a class="uk-link-toggle" href="<?php echo $permalink; ?>">
 <img width="80" height="80" src="<?php echo $img; ?>" alt="<?php echo $ttl; ?>">

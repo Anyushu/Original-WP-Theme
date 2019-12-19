@@ -20,6 +20,7 @@ $border-color: #e5e5e5;
   }
 
   strong {
+    color: $global-emphasis-color;
     background: linear-gradient(transparent 85%, rgba($global-danger-background, 0.7) 85%);
   }
 
@@ -41,6 +42,10 @@ $border-color: #e5e5e5;
       p {
         font-size: 1rem;
       }
+
+      cite {
+        font-size: 0.8rem;
+      }
     }
   }
 
@@ -50,6 +55,8 @@ $border-color: #e5e5e5;
 
       td,
       th {
+        box-sizing: border-box;
+        padding: 0.5em;
         border: solid 1px $border-color;
       }
     }
