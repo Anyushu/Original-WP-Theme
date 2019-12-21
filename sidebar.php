@@ -6,7 +6,7 @@ get_header();
 <aside id="sidebar" class="uk-width-1-3@m">
 <div class="uk-margin-large-bottom">
 <h3 class="uk-heading-line uk-text-center uk-text-lead"><span>カテゴリー</span></h3>
-<ul class="uk-list">
+<ul class="uk-list uk-list-bullet">
 <?php
 $args = [
     'orderby' => 'id',
