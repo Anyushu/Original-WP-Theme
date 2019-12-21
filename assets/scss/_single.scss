@@ -18,12 +18,10 @@ $border-color: #e5e5e5;
     background: transparent;
     border-left: solid 3px $global-primary-background;
   }
-
-  strong {
-    color: $global-emphasis-color;
-    background: linear-gradient(transparent 85%, rgba($global-danger-background, 0.7) 85%);
-  }
-
+  // strong {
+  //   color: $global-emphasis-color;
+  //   background: linear-gradient(transparent 85%, rgba($global-danger-background, 0.7) 85%);
+  // }
   pre {
     &.wp-block-code {
       padding: 0;
@@ -67,6 +65,14 @@ $border-color: #e5e5e5;
         padding: 0.5em;
         border: solid 1px $border-color;
       }
+
+      tr {
+        &:first-child {
+          td {
+            background-color: $global-muted-background;
+          }
+        }
+      }
     }
   }
   /* Gutenberg系 */
@@ -95,5 +101,21 @@ $border-color: #e5e5e5;
   /* 外部CSSのOverWrite */
   .hljs {
     padding: 1rem;
+  }
+}
+@media (max-width: $breakpoint-small) {
+  .main-article {
+
+    h2 {
+      font-size: $global-small-font-size*1.6
+    }
+
+    h3 {
+      font-size: $global-small-font-size*1.4
+    }
+
+    h4 {
+      font-size: $global-small-font-size*1.2
+    }
   }
 }

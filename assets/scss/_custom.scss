@@ -1,9 +1,16 @@
 /*
+メインカラー
 $primary: #247ba0;
 $green: #70c1b3;
 $middle: #b2dbbf;
 $yellow: #f3ffbd;
 $red: #ff1654;
+
+ブレイクポイント
+$breakpoint-small: 640px !default;
+$breakpoint-medium: 960px !default;
+$breakpoint-large: 1200px !default;
+$breakpoint-xlarge: 1600px !default;
 */
 /* Typography */
 $global-font-family: 'Noto Sans JP', sans-serif;
