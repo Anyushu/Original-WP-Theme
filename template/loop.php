@@ -15,14 +15,14 @@ $cat_name = $cat[0]->name;
 $img = '';
 $img_m = '';
 if (has_post_thumbnail()) {
-    $img = get_the_post_thumbnail_url($id, 'full');
-    $img_m = get_the_post_thumbnail_url($id, 'large');
+    $img = get_the_post_thumbnail_url($id, 'large');
+    $img_m = get_the_post_thumbnail_url($id, 'medium');
 }
 $thumbnail = '<img class="uk-width-expand" src="'.$img_m.'" srcset="'.$img_m.' 1x, '.$img.' 2x" alt="'.$ttl.'">';
 ?>
 <article>
 <a class="uk-link-toggle" href="<?php echo $permalink; ?>">
-<div class="uk-card uk-card-default uk-box-shadow-hover-medium uk-card-small uk-box-shadow-small">
+<div class="uk-card uk-card-default uk-box-shadow-hover-large uk-card-small uk-box-shadow-small">
 <div class="uk-card-media-top">
 <?php echo $thumbnail; ?>
 </div>
