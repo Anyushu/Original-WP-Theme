@@ -1,4 +1,3 @@
 # Anyushu Theme
-自作のWordPressテーマ
 
-※めちゃくちゃ途中
+自作のWordPressテーマ
