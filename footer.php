@@ -9,7 +9,7 @@ $wp_url = get_template_directory_uri(); ?>
 <div class="uk-container">
 <?php
 if (function_exists('yoast_breadcrumb')) {
-    yoast_breadcrumb();
+    yoast_breadcrumb('<div id="breadcrumbs">','</div>');
 }
 ?>
 </div>
