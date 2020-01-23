@@ -7,7 +7,11 @@ $wp_url = get_template_directory_uri(); ?>
 <hr class="uk-margin-remove">
 <div class="uk-padding-small">
 <div class="uk-container">
-<?php anyushu_breadcrumb(); ?>
+<?php
+if (function_exists('yoast_breadcrumb')) {
+    yoast_breadcrumb();
+}
+?>
 </div>
 </div>
 <?php endif; ?>
