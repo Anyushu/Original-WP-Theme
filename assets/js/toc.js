@@ -1,15 +1,15 @@
 $(function($) {
   // 設定項目
-  var toc = "<h2>目次</h2>\n<ol>";
-  var toc_selector = $('#toc');
-  var wrapper = $('.main-article');
-  var head = 'h2,h3';
-  var hierarchy;
-  var element = 0;
-  var count = 0;
-  var max_head = 2;
+  let toc = "<h2>目次</h2>\n<ol>";
+  const toc_selector = $('#toc');
+  const wrapper = $('.main-article');
+  const head = 'h2,h3';
+  let hierarchy;
+  let element = 0;
+  let count = 0;
+  let max_head = 1;
 
-  wrapper.children(head).each(function() {
+  wrapper.find(head).each(function() {
     count++;
     this.id = 'chapter-' + count;
     if (this.nodeName == 'H2') {
