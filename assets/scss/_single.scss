@@ -19,6 +19,12 @@ $border-color: #e5e5e5;
     border-left: solid 3px $global-primary-background;
   }
 
+  h2,
+  h3,
+  h4 {
+    margin-top: 1.5em auto 0.5em auto;
+  }
+
   pre {
     &.wp-block-code {
       padding: 0;
@@ -102,17 +108,16 @@ $border-color: #e5e5e5;
 }
 @media (max-width: $breakpoint-small) {
   .main-article {
-
     h2 {
-      font-size: $global-small-font-size*1.6
+      font-size: $global-small-font-size*1.6;
     }
 
     h3 {
-      font-size: $global-small-font-size*1.4
+      font-size: $global-small-font-size*1.4;
     }
 
     h4 {
-      font-size: $global-small-font-size*1.2
+      font-size: $global-small-font-size*1.2;
     }
   }
 }
