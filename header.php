@@ -89,4 +89,6 @@ foreach ($pages as $key => $page): ?>
 </form>
 </div>
 </div>
-<main>
+
+<div data-barba="wrapper">
+<main data-barba="container">

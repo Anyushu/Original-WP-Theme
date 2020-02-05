@@ -2,6 +2,7 @@
 $home = esc_url(home_url());
 $wp_url = get_template_directory_uri(); ?>
 </main>
+</div>
 <?php if (!is_front_page() && !is_home()): ?>
 <!-- breadcrumb -->
 <hr class="uk-margin-remove">
