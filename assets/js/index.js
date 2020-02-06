@@ -6,24 +6,12 @@ import '../scss/style.scss';
 import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons';
 
-/* barba */
-// import barba from '@barba/core';
-// import barbaCss from '@barba/css';
-
 /* オリジナル */
 import './toc';
 import './hljs';
 
 // loads the Icon plugin
 UIkit.use(Icons);
-
-// barba setup
-// barba.use(barbaCss);
-// barba.init({
-//   transitions: [{
-//     sync: true
-//   }]
-// });
 
 // Google Fonts
 window.WebFontConfig = {
