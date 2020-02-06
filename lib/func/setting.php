@@ -60,34 +60,23 @@ add_filter('document_title_separator', 'title_separator');
 // 標準のjquery消去
 function my_delete_local_jquery()
 {
-    wp_deregister_script('jquery');
+    if (is_user_logged_in()) {
+        wp_deregister_script('jquery');
+    }
 }
 add_action('wp_enqueue_scripts', 'my_delete_local_jquery');
-
-// インラインCSSの消去
-// function remove_recent_comments_style()
-// {
-//     global $wp_widget_factory;
-//     remove_action('wp_head',
-//         [
-//           $wp_widget_factory->widgets['WP_Widget_Recent_Comments'],
-//           'recent_comments_style'
-//         ]
-//     );
-// }
-// add_action('widgets_init', 'remove_recent_comments_style');
 
 // ウィジェット登録
 function arphabet_widgets_init()
 {
-    register_sidebar(array(
+    register_sidebar([
         'name' => 'サイドバー',
         'id' => 'side-bar',
         'before_widget' => '<div class="uk-margin-large-bottom">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="uk-heading-line uk-text-center uk-text-lead"><span>',
         'after_title' => '</span></h3>',
-    ));
+    ]);
 }
 add_action('widgets_init', 'arphabet_widgets_init');
 
