@@ -20,7 +20,7 @@ function add_my_scripts()
         'base-script',
         get_template_directory_uri().'/lib/js/bundle.js',
         [],
-        '1.0.1',
+        '1.0.0',
         true
     );
 }

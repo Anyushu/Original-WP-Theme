@@ -7,8 +7,8 @@ import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons';
 
 /* barba */
-import barba from '@barba/core';
-import barbaCss from '@barba/css';
+// import barba from '@barba/core';
+// import barbaCss from '@barba/css';
 
 /* オリジナル */
 import './toc';
@@ -18,12 +18,12 @@ import './hljs';
 UIkit.use(Icons);
 
 // barba setup
-barba.use(barbaCss);
-barba.init({
-  transitions: [{
-    sync: true
-  }]
-});
+// barba.use(barbaCss);
+// barba.init({
+//   transitions: [{
+//     sync: true
+//   }]
+// });
 
 // Google Fonts
 window.WebFontConfig = {
