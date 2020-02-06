@@ -16,7 +16,7 @@ UIkit.use(Icons);
 // Google Fonts
 window.WebFontConfig = {
   google: {
-    families: ['Noto+Sans+JP:300,500&display=swap&subset=japanese']
+    families: ['Noto+Sans+JP:300,500']
   },
   active: function() {
     sessionStorage.fonts = true;
