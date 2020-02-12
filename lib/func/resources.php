@@ -14,14 +14,14 @@ function twpp_enqueue_styles()
 add_action('wp_enqueue_scripts', 'twpp_enqueue_styles');
 
 // JSの管理
-function add_my_scripts()
-{
-    wp_enqueue_script(
-        'base-script',
-        get_template_directory_uri().'/lib/js/bundle.js',
-        [],
-        '1.0.0',
-        true
-    );
-}
-add_action('wp_enqueue_scripts', 'add_my_scripts');
+// function add_my_scripts()
+// {
+//     wp_enqueue_script(
+//         'base-script',
+//         get_template_directory_uri().'/lib/js/bundle.js',
+//         [],
+//         '1.0.0',
+//         true
+//     );
+// }
+// add_action('wp_enqueue_scripts', 'add_my_scripts');
