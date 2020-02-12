@@ -33,7 +33,7 @@ if (has_post_thumbnail()) {
 </div>
 <?php if ($img != ''): ?>
 <figure>
-<img class="uk-box-shadow-small" data-src="<?php echo $img_m; ?>" alt="<?php echo $ttl; ?>" uk-img>
+<img class="uk-box-shadow-small" src="<?php echo $img_m; ?>" srcset="<?php echo $img_m; ?> x1, <?php echo $img; ?> x2" alt="<?php echo $ttl; ?>">
 </figure>
 <?php endif; ?>
 <div id="toc" class="toc uk-section-muted"></div>
