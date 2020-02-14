@@ -23,6 +23,8 @@
     }
 
     .blog-card-content {
+      display: flex;
+      align-items: center;
       padding: 1em;
 
       p {
