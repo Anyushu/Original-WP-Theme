@@ -21,7 +21,7 @@ if (has_post_thumbnail()) {
 $thumbnail = '<img class="uk-width-expand" src="'.$img_m.'" srcset="'.$img_m.' 1x, '.$img.' 2x" alt="'.$ttl.'">';
 ?>
 <article>
-<a class="uk-link-toggle" href="<?php echo $permalink; ?>">
+<a class="uk-link-toggle" href="<?php echo $permalink; ?>" target="_blank">
 <div class="uk-card uk-card-default uk-box-shadow-hover-large uk-card-small uk-box-shadow-small">
 <div class="uk-card-media-top">
 <?php echo $thumbnail; ?>
