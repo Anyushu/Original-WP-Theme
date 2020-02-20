@@ -7,6 +7,7 @@ $wp_url = get_template_directory_uri();
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="theme-color" content="#247ba0">
 <meta name="p:domain_verify" content="5f019d2908ce499cbe840ea8100c429a">
 <meta name="msvalidate.01" content="C592CDA10B30CD7B306D683352521918">
 <meta property="fb:app_id" content="321970501560993">

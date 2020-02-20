@@ -24,8 +24,18 @@ $toc-base-sise: 1rem;
     margin-bottom: 0;
 
     li {
+      margin-bottom: $toc-base-sise / 2;
+
+      ol {
+        margin-top: $toc-base-sise / 2;
+      }
+
       a {
         font-size: 0.875rem;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
       }
     }
   }

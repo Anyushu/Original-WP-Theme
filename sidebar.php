@@ -130,9 +130,9 @@ if ($posttags) {
 <p>主に映画とWebについての記事を投稿するブログ「Anyushu」です。現役のWebエンジニアが記事を更新しています。</p>
 </div>
 <div class="uk-card-footer">
-<a href="https://twitter.com/Anyushu" class="uk-icon-button uk-margin-small-right" uk-icon="twitter" target="_blank"></a>
-<a href="https://www.facebook.com/Anyushu2017" class="uk-icon-button uk-margin-small-right" uk-icon="facebook" target="_blank"></a>
-<a href="https://www.instagram.com/anyushu2017/" class="uk-icon-button" uk-icon="instagram" target="_blank"></a>
+<a href="https://twitter.com/Anyushu" class="uk-icon-button uk-margin-small-right" uk-icon="twitter" target="_blank" rel="noopener noreferrer"></a>
+<a href="https://www.facebook.com/Anyushu2017" class="uk-icon-button uk-margin-small-right" uk-icon="facebook" target="_blank" rel="noopener noreferrer"></a>
+<a href="https://www.instagram.com/anyushu2017/" class="uk-icon-button" uk-icon="instagram" target="_blank" rel="noopener noreferrer"></a>
 </div>
 </div>
 </div>
