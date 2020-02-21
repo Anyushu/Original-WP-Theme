@@ -18,7 +18,7 @@ if (has_post_thumbnail()) {
     $img = get_the_post_thumbnail_url($id, 'large');
     $img_m = get_the_post_thumbnail_url($id, 'medium');
 }
-$thumbnail = '<img class="uk-width-expand" src="'.$img_m.'" srcset="'.$img_m.' 1x, '.$img.' 2x" alt="'.$ttl.'">';
+$thumbnail = '<img class="uk-width-expand" loading="lazy" src="'.$img_m.'" srcset="'.$img_m.' 1x, '.$img.' 2x" alt="'.$ttl.'">';
 ?>
 <article>
 <a class="uk-link-toggle" href="<?php echo $permalink; ?>" target="_blank">
