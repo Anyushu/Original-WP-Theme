@@ -108,7 +108,7 @@ $args=array(
 $posttags = get_tags($args);
 if ($posttags) {
     foreach ($posttags as $tag) {
-        echo '<a class="uk-link-text uk-text-small uk-display-inline-block uk-margin-small-top uk-margin-small-right" href="'.get_tag_link($tag->term_id).'"><span uk-icon="tag"></span>'.$tag->name.'</a>';
+        echo '<a class="uk-badge uk-padding-small uk-margin-small-top uk-margin-small-right" href="'.get_tag_link($tag->term_id).'">#'.$tag->name.'</a>';
     }
 }
 ?>

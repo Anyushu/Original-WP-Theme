@@ -31,6 +31,19 @@ if (has_post_thumbnail()) {
 <a class="uk-link-text" href="<?php echo $cat_slug; ?>"><span class="uk-margin-small-right" uk-icon="folder"></span><?php echo $cat_name; ?></a>
 </p>
 </div>
+<?php
+$tags = get_the_tags();
+if ($tags !== null): ?>
+<div class="post-tags uk-margin-top">
+<?php
+foreach ($tags as $tag):
+$tag_url = get_tag_link($tag->term_id);
+$tag_name = $tag->name;
+?>
+<a class="uk-badge uk-padding-small uk-margin-small-bottom uk-margin-small-right" href="<?php echo $tag_url; ?>">#<?php echo $tag_name; ?></a>
+<?php endforeach; ?>
+</div>
+<?php endif; ?>
 <?php if ($img != ''): ?>
 <figure>
 <img loading="lazy" class="uk-box-shadow-small uk-width-expand" src="<?php echo $img_m; ?>" srcset="<?php echo $img_m; ?> 1x, <?php echo $img; ?> 2x" alt="<?php echo $ttl; ?>">
