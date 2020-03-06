@@ -84,7 +84,7 @@ function nlink_scode($atts)
     }
     if (has_post_thumbnail($id)) {
         $img = wp_get_attachment_image_src(get_post_thumbnail_id($id), 'thumbnail');
-        $img_tag = "<img src='".$img[0]."' alt='{$title}'".">";
+        $img_tag = '<img loading="lazy" src="'.$img[0].'" alt="'.$title.'">';
     }
     $nlink .='
 <div class="blog-card uk-box-shadow-small uk-box-shadow-hover-medium">
