@@ -2,7 +2,6 @@
 $home = esc_url(home_url());
 $wp_url = get_template_directory_uri();
 get_header();
-
 the_post();
 $post_id = get_the_ID();
 $ttl = get_the_title();

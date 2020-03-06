@@ -20,7 +20,7 @@ if (function_exists('yoast_breadcrumb')) {
 <div class="uk-container uk-clearfix">
 <p class="uk-margin-remove">
 <a class="uk-float-left" href="<?php echo $home; ?>">
-<img src="<?php echo $wp_url; ?>/lib/images/logo.svg" width="120" alt="<?php echo get_site_title(); ?>">
+<img loading="lazy" src="<?php echo $wp_url; ?>/lib/images/logo.svg" width="120" alt="<?php echo get_site_title(); ?>">
 </a>
 <a class="uk-float-right" href="#" uk-totop uk-scroll></a>
 </p>

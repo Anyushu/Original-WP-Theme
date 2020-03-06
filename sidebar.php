@@ -38,7 +38,7 @@ if (has_post_thumbnail()) {
 <div class="uk-flex-middle uk-margin-remove-top" uk-grid>
 <div class="uk-width-auto">
 <a class="uk-link-toggle" href="<?php echo $permalink; ?>">
-<img width="80" height="80" src="<?php echo $img; ?>" srcset="<?php echo $img; ?> 1x, <?php echo $img; ?> 2x" alt="<?php echo $ttl; ?>">
+<img loading="lazy" width="80" height="80" src="<?php echo $img; ?>" srcset="<?php echo $img; ?> 1x, <?php echo $img; ?> 2x" alt="<?php echo $ttl; ?>">
 </a>
 </div>
 <div class="uk-padding-small uk-width-expand">
@@ -80,7 +80,7 @@ if (has_post_thumbnail()) {
 <div class="uk-flex-middle uk-margin-remove-top" uk-grid>
 <div class="uk-width-auto">
 <a class="uk-link-toggle" href="<?php echo $permalink; ?>">
-<img width="80" height="80" src="<?php echo $img; ?>" srcset="<?php echo $img; ?> 1x, <?php echo $img; ?> 2x" alt="<?php echo $ttl; ?>">
+<img loading="lazy" width="80" height="80" src="<?php echo $img; ?>" srcset="<?php echo $img; ?> 1x, <?php echo $img; ?> 2x" alt="<?php echo $ttl; ?>">
 </a>
 </div>
 <div class="uk-padding-small uk-width-expand">
@@ -119,7 +119,7 @@ if ($posttags) {
 <div class="uk-card-header">
 <div class="uk-grid-small uk-flex-middle" uk-grid>
 <div class="uk-width-auto">
-<img class="uk-border-circle" width="40" height="40" src="<?php echo $wp_url; ?>/lib/images/me.jpg" alt="Anyushuについて">
+<img loading="lazy" class="uk-border-circle" width="40" height="40" src="<?php echo $wp_url; ?>/lib/images/me.jpg" alt="Anyushuについて">
 </div>
 <div class="uk-width-expand">
 <h3 class="uk-card-title uk-margin-remove-bottom">Anyushuについて</h3>
