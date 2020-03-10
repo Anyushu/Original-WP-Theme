@@ -11,7 +11,7 @@ $permalink = get_the_permalink();
 <div class="uk-container">
 <div class="uk-grid-divider" uk-grid>
 <section class="uk-article uk-width-expand@m">
-<h2 class="uk-article-title"><?php echo $ttl; ?></h2>
+<h2 class="uk-article-title uk-text-bolder"><?php echo $ttl; ?></h2>
 <div class="uk-article-meta">
 <time datetime="<?php the_modified_time('Y-m-d'); ?>"><span class="uk-margin-small-right" uk-icon="history"></span><?php the_modified_time('Y.m.d'); ?></time>
 </div>

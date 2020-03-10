@@ -157,7 +157,7 @@ if (!function_exists('rating_star_shortcode')) {
 add_shortcode('star', 'rating_star_shortcode');
 
 //popular post からquery_posts生成
-function get_popular_args($range= "month", $limit = 5)
+function get_popular_args($range = 'month', $limit = 5)
 {
     $shortcode = '[wpp';
     $atts = '
@@ -168,10 +168,10 @@ function get_popular_args($range= "month", $limit = 5)
         post_type="post"
         stats_comments=0
         stats_views=1';
-    $atts_2 = ' range='. $range;
-    $atts_3 = ' limit='. $limit;
-    $shortcode .= ' ' . $atts . $atts_2 . $atts_3 . ']';
-    $result = explode(",", strip_tags(do_shortcode($shortcode)));
+    $atts_2 = ' range='.$range;
+    $atts_3 = ' limit='.$limit;
+    $shortcode .= ' '.$atts.$atts_2.$atts_3.']';
+    $result = explode(',', strip_tags(do_shortcode($shortcode)));
     $ranked_post_ids = [];
     foreach ($result as $_url) {
         if (!empty($_url) && trim($_url) != '') {

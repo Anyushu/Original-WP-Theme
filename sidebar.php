@@ -22,6 +22,8 @@ foreach ($categories as $category):
 <?php endforeach; ?>
 </ul>
 </div>
+
+<?php if (!is_page('ranking')): ?>
 <div class="uk-margin-large-bottom">
 <h3 class="uk-heading-line uk-text-center uk-text-lead"><span>今月の人気記事</span></h3>
 <?php
@@ -53,6 +55,7 @@ endforeach;
 wp_reset_query();
 ?>
 </div>
+<?php endif; ?>
 
 <?php if (is_single()):
 foreach ((get_the_category()) as $cat) {
@@ -132,7 +135,8 @@ if ($posttags) {
 <div class="uk-card-footer">
 <a href="https://twitter.com/Anyushu" class="uk-icon-button uk-margin-small-right" uk-icon="twitter" target="_blank" rel="noopener noreferrer"></a>
 <a href="https://www.facebook.com/Anyushu2017" class="uk-icon-button uk-margin-small-right" uk-icon="facebook" target="_blank" rel="noopener noreferrer"></a>
-<a href="https://www.instagram.com/anyushu2017/" class="uk-icon-button" uk-icon="instagram" target="_blank" rel="noopener noreferrer"></a>
+<a href="https://www.instagram.com/anyushu2017/" class="uk-icon-button uk-margin-small-right" uk-icon="instagram" target="_blank" rel="noopener noreferrer"></a>
+<a href="mailto:info@anyushu.com" class="uk-icon-button" uk-icon="mail" target="_blank"></a>
 </div>
 </div>
 </div>
