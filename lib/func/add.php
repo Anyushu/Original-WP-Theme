@@ -81,10 +81,14 @@ function nlink_scode($atts)
     $id = url_to_postid($url);
     if (empty($title)) {
         $title = esc_html(get_the_title($id));
+    } else {
+        $title = '';
     }
     if (has_post_thumbnail($id)) {
         $img = wp_get_attachment_image_src(get_post_thumbnail_id($id), 'thumbnail');
         $img_tag = '<img loading="lazy" src="'.$img[0].'" alt="'.$title.'">';
+    } else {
+        $img_tag = '';
     }
     $nlink .='
 <div class="blog-card uk-box-shadow-small uk-box-shadow-hover-medium">

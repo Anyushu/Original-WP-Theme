@@ -39,5 +39,5 @@ $thumbnail = '<img loading="lazy" class="uk-width-expand" src="'.$img_m.'" srcse
 <?php
 endif;
 if (function_exists('pagination')) {
-    pagination($additional_loop->max_num_pages);
+    pagination();
 }
