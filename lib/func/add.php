@@ -10,10 +10,14 @@ add_filter('manage_posts_columns', 'customize_manage_posts_columns');
 function customize_manage_posts_custom_column($column_name, $post_id)
 {
     if ('thumbnail' == $column_name) {
-        $thum = get_the_post_thumbnail($post_id, 'thumbnail', array('style'=>'width:100px;height:auto'));
-    }
-    if (isset($thum) && $thum) {
-        echo $thum;
+        $thum = get_the_post_thumbnail($post_id, 'thumbnail', [
+            'style'=>'width:100px;height:auto'
+        ]);
+        if (isset($thum) && $thum) {
+            echo $thum;
+        } else {
+            echo __('None');
+        }
     }
 }
 add_action('manage_posts_custom_column', 'customize_manage_posts_custom_column', 10, 2);
@@ -150,16 +154,6 @@ if (!function_exists('get_rating_star_tag')) {
     }
 }
 
-//星ショートコード
-if (!function_exists('rating_star_shortcode')) {
-    function rating_star_shortcode($atts, $content = null)
-    {
-        extract(shortcode_atts(array('rate' => 5,'max' => 5,'number' => 1,), $atts));
-        return get_rating_star_tag($rate, $max, $number);
-    }
-}
-add_shortcode('star', 'rating_star_shortcode');
-
 //popular post からquery_posts生成
 function get_popular_args($range = 'month', $limit = 5)
 {
@@ -197,112 +191,6 @@ function get_page_list()
 {
     $page_list = get_posts('order=desc&post_type=page');
     return $page_list;
-}
-
-// パンくず
-function anyushu_breadcrumb($args = [])
-{
-    global $post;
-    $str ='';
-    $defaults = array(
-        'class' => 'breadcrumb',
-        'home' => 'TOP',
-        'search' => 'の検索結果 ',
-        'tag' => '',
-        'author' => '',
-        'notfound' => 'Hello! My Name Is 404',
-    );
-    $args = wp_parse_args($args, $defaults);
-    extract($args, EXTR_SKIP);
-    if (!is_home() && !is_admin()) {
-        $str.= '<ul class="breadcrumb__list uk-breadcrumb uk-text-truncate uk-text-nowrap">';
-        $str.= '<li class="breadcrumb__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'. home_url() .'/" itemprop="url"><span class="icon-home" itemprop="title">'. $home .'</span></a></li>';
-        $my_taxonomy = get_query_var('taxonomy');
-        $cpt = get_query_var('post_type');
-        if ($my_taxonomy && is_tax($my_taxonomy)) {
-            $my_tax = get_queried_object();
-            $post_types = get_taxonomy($my_taxonomy)->object_type;
-            $cpt = $post_types[0];
-            $str.='<li class="breadcrumb__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="' .get_post_type_archive_link($cpt).'" itemprop="url"><span itemprop="title">'. get_post_type_object($cpt)->label.'</span></a></li>';
-            if ($my_tax->parent != 0) {
-                $ancestors = array_reverse(get_ancestors($my_tax->term_id, $my_tax->taxonomy));
-                foreach ($ancestors as $ancestor) {
-                    $str.='<li class="breadcrumb__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'. get_term_link($ancestor, $my_tax->taxonomy) .'" itemprop="url"><span itemprop="title">'. get_term($ancestor, $my_tax->taxonomy)->name .'</span></a></li>';
-                }
-            }
-            $str.='<li class="breadcrumb__item"><span>'. $my_tax->name.'</span></li>';
-        } elseif (is_category()) {
-            $cat = get_queried_object();
-            if ($cat->parent != 0) {
-                $ancestors = array_reverse(get_ancestors($cat->cat_ID, 'category'));
-                foreach ($ancestors as $ancestor) {
-                    $str.='<li class="breadcrumb__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'. get_category_link($ancestor) .'" itemprop="url"><span itemprop="title">'. get_cat_name($ancestor) .'</span></a></li>';
-                }
-            }
-            $str.='<li class="breadcrumb__item"><span>'. $cat->name.'</span></li>';
-        } elseif (is_post_type_archive()) {
-            $cpt = get_query_var('post_type');
-            $str.='<li class="breadcrumb__item"><span>'. get_post_type_object($cpt)->label.'</span></li>';
-        } elseif ($cpt && is_singular($cpt)) {
-            $taxes = get_object_taxonomies($cpt);
-            $mytax = $taxes[0];
-            $str.='<li class="breadcrumb__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="' .get_post_type_archive_link($cpt).'" itemprop="url"><span itemprop="title">'. get_post_type_object($cpt)->label.'</span></a></li>';
-            $taxes = get_the_terms($post->ID, $mytax);
-            $tax = get_youngest_tax($taxes, $mytax);
-            if ($tax->parent != 0) {
-                $ancestors = array_reverse(get_ancestors($tax->term_id, $mytax));
-                foreach ($ancestors as $ancestor) {
-                    $str.='<li class="breadcrumb__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'. get_term_link($ancestor, $mytax).'" itemprop="url"><span itemprop="title">'. get_term($ancestor, $mytax)->name.'</span></a></li>';
-                }
-            }
-            $str.='<li class="breadcrumb__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'. get_term_link($tax, $mytax).'" itemprop="url"><span itemprop="title">'. $tax->name.'</span></a></li>';
-            $str.= '<li class="breadcrumb__item"><span>'. $post->post_title .'</span></li>';
-        } elseif (is_single()) {
-            $categories = get_the_category($post->ID);
-            $cat = get_youngest_cat($categories);
-            if ($cat->parent != 0) {
-                $ancestors = array_reverse(get_ancestors($cat->cat_ID, 'category'));
-                foreach ($ancestors as $ancestor) {
-                    $str.='<li class="breadcrumb__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'. get_category_link($ancestor).'" itemprop="url"><span itemprop="title">'. get_cat_name($ancestor). '</span></a></li>';
-                }
-            }
-            $str.='<li class="breadcrumb__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'. get_category_link($cat->term_id). '" itemprop="url"><span itemprop="title">'. $cat->cat_name.'</span></a></li>';
-            $str.= '<li class="breadcrumb__item"><span>'. $post->post_title .'</span></li>';
-        } elseif (is_page()) {
-            if ($post->post_parent != 0) {
-                $ancestors = array_reverse(get_post_ancestors($post->ID));
-                foreach ($ancestors as $ancestor) {
-                    $str.='<li class="breadcrumb__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'. get_permalink($ancestor).'" itemprop="url"><span itemprop="title">'. get_the_title($ancestor) .'</span></a></li>';
-                }
-            }
-            $str.= '<li class="breadcrumb__item"><span>'. $post->post_title .'</span></li>';
-        } elseif (is_date()) {
-            if (get_query_var('day') != 0) {
-                $str.='<li class="breadcrumb__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'. get_year_link(get_query_var('year')). '" itemprop="url"><span itemprop="title">'.get_query_var('year'). '年</span></a></li>';
-                $str.='<li class="breadcrumb__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'. get_month_link(get_query_var('year'), get_query_var('monthnum')). '" itemprop="url"><span itemprop="title">'. get_query_var('monthnum') .'月</span></a></li>';
-                $str.='<li class="breadcrumb__item">'. get_query_var('day'). '日</li>';
-            } elseif (get_query_var('monthnum') != 0) {
-                $str.='<li class="breadcrumb__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'. get_year_link(get_query_var('year')) .'" itemprop="url"><span itemprop="title">'. get_query_var('year') .'年</span></a></li>';
-                $str.='<li class="breadcrumb__item">'. get_query_var('monthnum'). '月</li>';
-            } else {
-                $str.='<li class="breadcrumb__item">'. get_query_var('year') .'年</li>';
-            }
-        } elseif (is_search()) {
-            $str.='<li class="breadcrumb__item"><span>「'. get_search_query() .'」'. $search .'</span></li>';
-        } elseif (is_author()) {
-            $str .='<li class="breadcrumb__item"><span>'. $author.get_the_author_meta('display_name', get_query_var('author')).'</span></li>';
-        } elseif (is_tag()) {
-            $str.='<li class="breadcrumb__item"><span>'. $tag.single_tag_title('', false). '</span></li>';
-        } elseif (is_attachment()) {
-            $str.= '<li class="breadcrumb__item"><span>'. $post->post_title .'</span></li>';
-        } elseif (is_404()) {
-            $str.='<li class="breadcrumb__item"><span>'.$notfound.'</span></li>';
-        } else {
-            $str.='<li class="breadcrumb__item"><span>'. wp_title('', true) .'</span></li>';
-        }
-        $str.='</ul>';
-    }
-    echo $str;
 }
 
 function get_youngest_cat($categories)

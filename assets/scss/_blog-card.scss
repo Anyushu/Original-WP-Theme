@@ -34,14 +34,10 @@
     }
   }
 }
-
 @media (max-width: $breakpoint-small) {
   .blog-card {
-
     a {
-
       .blog-card-content {
-
         p {
           font-size: $global-small-font-size;
         }
