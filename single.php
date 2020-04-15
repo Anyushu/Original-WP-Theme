@@ -24,7 +24,6 @@ if (has_post_thumbnail()) {
 <article id="post-main" class="post-main uk-article uk-width-expand@m">
 <h1 class="uk-h2 uk-text-bolder"><?php echo $ttl; ?></h1>
 <div class="uk-article-meta uk-flex uk-flex-wrap">
-<time class="uk-margin-right" datetime="<?php the_time('Y-m-d'); ?>"><span class="uk-margin-small-right" uk-icon="calendar"></span><?php the_time('Y.m.d'); ?></time>
 <time class="uk-margin-right" datetime="<?php the_modified_time('Y-m-d'); ?>"><span class="uk-margin-small-right" uk-icon="history"></span><?php the_modified_time('Y.m.d'); ?></time>
 <p class="uk-margin-remove-top uk-margin-remove-bottom">
 <a class="uk-link-text" href="<?php echo $cat_slug; ?>"><span class="uk-margin-small-right" uk-icon="folder"></span><?php echo $cat_name; ?></a>
