@@ -11,6 +11,7 @@ $wp_url = get_template_directory_uri();
 <meta name="p:domain_verify" content="5f019d2908ce499cbe840ea8100c429a">
 <meta name="msvalidate.01" content="C592CDA10B30CD7B306D683352521918">
 <meta property="fb:app_id" content="321970501560993">
+<?php wp_head(); ?>
 <?php if (!is_user_logged_in()): ?>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -19,7 +20,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-NN3ZTBZ');</script>
 <?php endif; ?>
-<?php wp_head(); ?>
 </head>
 <body>
 <?php if (!is_user_logged_in()): ?>
