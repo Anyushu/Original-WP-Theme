@@ -13,8 +13,7 @@ $breakpoint-large: 1200px !default;
 $breakpoint-xlarge: 1600px !default;
 */
 /* Typography */
-$global-font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", Meiryo,
-  sans-serif;
+$global-font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
 /* Colors */
 $global-color: #666;
 $global-emphasis-color: #333;
@@ -31,8 +30,8 @@ $global-success-background: #70c1b3;
 $global-warning-background: #faa05a;
 $global-danger-background: #ff1654;
 /* font-weight */
-$base-body-font-weight: 300;
-$base-heading-font-weight: 300;
-$table-header-cell-font-weight: 300;
-$description-list-term-font-weight: 300;
-$base-strong-font-weight: 500;
+$base-body-font-weight: 400;
+$base-heading-font-weight: 400;
+$table-header-cell-font-weight: 400;
+$description-list-term-font-weight: 400;
+$base-strong-font-weight: 700;

@@ -4,7 +4,7 @@
 add_theme_support('post-thumbnails');
 
 // html5許可
-add_theme_support('html5', array('comment-list', 'comment-form', 'search-form', 'gallery', 'caption'));
+add_theme_support('html5', ['comment-list', 'comment-form', 'search-form', 'gallery', 'caption']);
 
 // oembed消去
 remove_action('wp_head', 'rest_output_link_wp_head');
@@ -60,7 +60,9 @@ add_filter('document_title_separator', 'title_separator');
 // 標準のjquery消去
 function my_delete_local_jquery()
 {
-    wp_deregister_script('jquery');
+    if (!is_admin()) {
+        wp_deregister_script('jquery');
+    }
 }
 add_action('wp_enqueue_scripts', 'my_delete_local_jquery');
 
