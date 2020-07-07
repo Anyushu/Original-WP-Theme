@@ -19,7 +19,7 @@ if (function_exists('yoast_breadcrumb')) {
 <footer class="uk-padding uk-section-muted">
 <div class="uk-container uk-clearfix">
 <p class="uk-margin-remove">
-<a class="uk-float-left" href="<?php echo $home; ?>"><img src="<?php echo $wp_url; ?>/lib/images/logo.png" srcset="<?php echo $wp_url; ?>/lib/images/logo.png 1x, <?php echo $wp_url; ?>/lib/images/logo@2x.png 2x" alt="<?php echo get_site_title(); ?>"></a>
+<a class="uk-float-left" href="<?php echo $home; ?>"><img src="<?php echo $wp_url; ?>/lib/images/logo.png" width="120" srcset="<?php echo $wp_url; ?>/lib/images/logo.png 1x, <?php echo $wp_url; ?>/lib/images/logo@2x.png 2x" alt="<?php echo get_site_title(); ?>"></a>
 <a class="uk-float-right" href="#" uk-totop uk-scroll></a>
 </p>
 </div>
