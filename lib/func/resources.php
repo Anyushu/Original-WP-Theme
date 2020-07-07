@@ -1,7 +1,7 @@
 <?php
 
 // CSSの管理
-function twpp_enqueue_styles()
+function add_enqueue_styles()
 {
     wp_enqueue_style(
         'main-style',
@@ -11,7 +11,7 @@ function twpp_enqueue_styles()
         'all'
     );
 }
-add_action('wp_enqueue_scripts', 'twpp_enqueue_styles');
+add_action('wp_enqueue_scripts', 'add_enqueue_styles');
 
 // JSの管理
 // function add_my_scripts()

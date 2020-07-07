@@ -83,7 +83,7 @@ if (has_post_thumbnail()) {
 <div class="uk-flex-middle uk-margin-remove-top" uk-grid>
 <div class="uk-width-auto">
 <a class="uk-link-toggle" href="<?php echo $permalink; ?>">
-<img loading="lazy" width="80" height="80" src="<?php echo $img; ?>" srcset="<?php echo $img; ?> 1x, <?php echo $img; ?> 2x" alt="<?php echo $ttl; ?>">
+<img width="80" height="80" src="<?php echo $img; ?>" srcset="<?php echo $img; ?> 1x, <?php echo $img; ?> 2x" alt="<?php echo $ttl; ?>">
 </a>
 </div>
 <div class="uk-padding-small uk-width-expand">
