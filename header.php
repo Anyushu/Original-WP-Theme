@@ -38,9 +38,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 <div class="uk-navbar-center">
 <?php if (!is_single()): ?>
-<h1 class="uk-margin-remove"><a class="uk-navbar-item" href="<?php echo $home; ?>"><img src="<?php echo $wp_url; ?>/lib/images/logo.svg" width="120" alt="<?php echo get_site_title(); ?>"></a></h1>
+<h1 class="uk-margin-remove"><a class="uk-navbar-item" href="<?php echo $home; ?>"><img src="<?php echo $wp_url; ?>/lib/images/logo.png" srcset="<?php echo $wp_url; ?>/lib/images/logo.png 1x, <?php echo $wp_url; ?>/lib/images/logo@2x.png 2x" alt="<?php echo get_site_title(); ?>"></a></h1>
 <?php else: ?>
-<a class="uk-navbar-item" href="<?php echo $home; ?>"><img src="<?php echo $wp_url; ?>/lib/images/logo.svg" width="120" alt="<?php echo get_site_title(); ?>"></a>
+<a class="uk-navbar-item" href="<?php echo $home; ?>"><img src="<?php echo $wp_url; ?>/lib/images/logo.png" srcset="<?php echo $wp_url; ?>/lib/images/logo.png 1x, <?php echo $wp_url; ?>/lib/images/logo@2x.png 2x" alt="<?php echo get_site_title(); ?>"></a>
 <?php endif; ?>
 </div>
 <div class="uk-navbar-right">
