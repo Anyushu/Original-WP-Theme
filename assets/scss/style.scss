@@ -8,3 +8,9 @@
 @import 'toc';
 @import 'single';
 @import 'adjustment';
+
+.header {
+  &-wrap {
+    min-height: 20px;
+  }
+}

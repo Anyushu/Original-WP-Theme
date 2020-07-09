@@ -7,7 +7,7 @@ import UIkit from "uikit";
 import Icons from "uikit/dist/js/uikit-icons";
 
 /* ロード時間のデバッグ */
-// import { getCLS, getFID, getLCP } from "web-vitals";
+import { getCLS, getFID, getLCP } from "web-vitals";
 
 /* オリジナル */
 import "./toc";
@@ -17,6 +17,6 @@ import "./hljs";
 UIkit.use(Icons);
 
 /* ロード時間のデバッグ */
-// getCLS(console.log);
-// getFID(console.log);
-// getLCP(console.log);
+getCLS(console.log);
+getFID(console.log);
+getLCP(console.log);

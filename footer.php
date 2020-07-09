@@ -35,7 +35,6 @@ if (function_exists('yoast_breadcrumb')) {
 </div>
 </div>
 </div>
-<script src="<?php echo $wp_url; ?>/lib/js/bundle.js" defer></script>
 <?php wp_footer(); ?>
 </body>
 </html>

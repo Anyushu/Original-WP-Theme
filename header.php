@@ -20,6 +20,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-NN3ZTBZ');</script>
 <?php endif; ?>
+<script src="<?php echo $wp_url; ?>/lib/js/bundle.js" defer></script>
 </head>
 <body>
 <?php if (!is_user_logged_in()): ?>
@@ -28,9 +29,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <?php endif; ?>
 <!-- header -->
-<header uk-sticky="show-on-up: true; animation: uk-animation-slide-top; bottom: #bottom">
+<header class="header" uk-sticky="show-on-up: true; animation: uk-animation-slide-top; bottom: #bottom">
 <div class="uk-offcanvas-content">
-<div class="uk-section-xsmall uk-section-default uk-box-shadow-small">
+<div class="header-wrap uk-section-xsmall uk-section-default uk-box-shadow-small">
 <div class="uk-container uk-container-expand">
 <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
 <div class="uk-navbar-left">
@@ -38,9 +39,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 <div class="uk-navbar-center">
 <?php if (!is_single()): ?>
-<h1 class="uk-margin-remove"><a class="uk-navbar-item" href="<?php echo $home; ?>"><img src="<?php echo $wp_url; ?>/lib/images/logo.png" width="120" srcset="<?php echo $wp_url; ?>/lib/images/logo.png 1x, <?php echo $wp_url; ?>/lib/images/logo@2x.png 2x" alt="<?php echo get_site_title(); ?>"></a></h1>
+<h1 class="uk-margin-remove"><a class="uk-navbar-item" href="<?php echo $home; ?>"><img src="<?php echo $wp_url; ?>/lib/images/logo.png" width="120" height="28.5" srcset="<?php echo $wp_url; ?>/lib/images/logo.png 1x, <?php echo $wp_url; ?>/lib/images/logo@2x.png 2x" alt="<?php echo get_site_title(); ?>"></a></h1>
 <?php else: ?>
-<a class="uk-navbar-item" href="<?php echo $home; ?>"><img src="<?php echo $wp_url; ?>/lib/images/logo.png" width="120" srcset="<?php echo $wp_url; ?>/lib/images/logo.png 1x, <?php echo $wp_url; ?>/lib/images/logo@2x.png 2x" alt="<?php echo get_site_title(); ?>"></a>
+<a class="uk-navbar-item" href="<?php echo $home; ?>"><img src="<?php echo $wp_url; ?>/lib/images/logo.png" width="120" height="28.5" srcset="<?php echo $wp_url; ?>/lib/images/logo.png 1x, <?php echo $wp_url; ?>/lib/images/logo@2x.png 2x" alt="<?php echo get_site_title(); ?>"></a>
 <?php endif; ?>
 </div>
 <div class="uk-navbar-right">
@@ -86,7 +87,7 @@ foreach ($pages as $key => $page): ?>
 <div class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle" uk-height-viewport>
 <button class="uk-modal-close-full" type="button" uk-close></button>
 <form class="uk-search uk-search-large" action="<?php echo $home; ?>" method="get">
-<input class="uk-search-input uk-text-center" type="search" name="s" placeholder="Search..." autofocus>
+<input class="uk-search-input uk-text-center" type="search" name="s" placeholder="キーワードで検索" autofocus>
 </form>
 </div>
 </div>
