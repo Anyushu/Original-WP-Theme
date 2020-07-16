@@ -1,9 +1,9 @@
 // highlight
-import hljs from 'highlight.js';
+import hljs from "highlight.js";
 
 // config
 hljs.configure({
-  tabReplace: '  ',
+  tabReplace: "  ",
 });
 
 // start
