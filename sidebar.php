@@ -141,6 +141,12 @@ if ($posttags) {
 </div>
 </div>
 
+<div class="side__ads">
+<a href="https://px.a8.net/svt/ejp?a8mat=35PWPM+E22GZ6+CO4+102V9D" rel="nofollow">
+<img alt="wpX" src="https://www26.a8.net/svt/bgt?aid=191005402850&wid=001&eno=01&mid=s00000001642006060000&mc=1"></a>
+<img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=35PWPM+E22GZ6+CO4+102V9D" alt="A8net">
+</div>
+
 <?php dynamic_sidebar(); ?>
 
 </aside>

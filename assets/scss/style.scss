@@ -1,16 +1,27 @@
-@import 'custom';
-@import 'uikit/src/scss/variables-theme.scss';
-@import 'uikit/src/scss/mixins-theme.scss';
-@import 'uikit/src/scss/uikit-theme.scss';
-@import 'highlight.js/scss/atom-one-dark.scss';
+@import "custom";
+@import "uikit/src/scss/variables-theme.scss";
+@import "uikit/src/scss/mixins-theme.scss";
+@import "uikit/src/scss/uikit-theme.scss";
+@import "highlight.js/scss/atom-one-dark.scss";
 /* Original */
-@import 'blog-card';
-@import 'toc';
-@import 'single';
-@import 'adjustment';
+@import "blog-card";
+@import "toc";
+@import "single";
+@import "adjustment";
 
 .header {
   &-wrap {
     min-height: 20px;
+  }
+}
+
+.side {
+  &__ads {
+    a {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
   }
 }
