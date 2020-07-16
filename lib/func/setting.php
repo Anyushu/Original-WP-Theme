@@ -1,5 +1,10 @@
 <?php
 
+// コンテンツ幅
+if (! isset($content_width)) {
+    $content_width = 960;
+}
+
 // アイキャッチ設定
 add_theme_support('post-thumbnails');
 
@@ -102,3 +107,6 @@ function my_the_excerpt($postContent)
     return $postContent;
 }
 add_filter('get_the_excerpt', 'my_the_excerpt');
+
+// feed-links
+add_theme_support('automatic-feed-links');

@@ -18,6 +18,7 @@ if (has_post_thumbnail()) {
     $img_m = get_the_post_thumbnail_url(get_the_ID(), 'large');
 }
 ?>
+<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <section class="uk-section-small">
 <div class="uk-container">
 <div class="uk-grid-divider" uk-grid>
@@ -58,4 +59,5 @@ $tag_name = $tag->name;
 </div>
 </div>
 </section>
+</div>
 <?php get_footer();

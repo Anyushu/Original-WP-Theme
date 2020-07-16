@@ -140,4 +140,7 @@ if ($posttags) {
 </div>
 </div>
 </div>
+
+<?php dynamic_sidebar(); ?>
+
 </aside>
