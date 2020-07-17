@@ -54,6 +54,14 @@ $tag_name = $tag->name;
 <hr class="uk-divider-icon">
 <?php echo do_shortcode('[addtoany]'); ?>
 </div>
+<!-- googleads -->
+<div class="googleads uk-margin-medium-top">
+<!-- サイドバーウイジェット -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8001917266946391" data-ad-slot="5811497946" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<!-- googleads -->
 </article>
 <?php get_sidebar(); ?>
 </div>
