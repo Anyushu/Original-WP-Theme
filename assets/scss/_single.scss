@@ -1,33 +1,28 @@
 $border-color: #e5e5e5;
-
 .main-article {
   position: relative;
   width: 100%;
   height: auto;
   color: $global-emphasis-color;
-  line-height: 1.7;
-
+  line-height: 1.925em;
   h2 {
     box-sizing: border-box;
     padding: 0.5em;
     background-color: $global-muted-background;
     border-bottom: solid 3px $global-primary-background;
   }
-
   h3 {
     box-sizing: border-box;
     padding: 0.25em 0.5em;
     background: transparent;
     border-left: solid 3px $global-primary-background;
   }
-
   h2,
   h3,
   h4 {
     font-weight: bold;
     margin: 1.5em auto 0.5em;
   }
-
   pre {
     &.wp-block-code {
       padding: 0;
@@ -35,24 +30,20 @@ $border-color: #e5e5e5;
       border-radius: 0;
     }
   }
-
   blockquote {
     &.wp-block-quote {
       box-sizing: border-box;
       padding: 1rem 1.5rem;
       border-left: 3px solid $global-color;
       background-color: $global-muted-background;
-
       p {
         font-size: 1rem;
       }
-
       cite {
         font-size: 0.8rem;
       }
     }
   }
-
   .wp-block-image {
     figure {
       figcaption {
@@ -60,18 +51,15 @@ $border-color: #e5e5e5;
       }
     }
   }
-
   .wp-block-table {
     table {
       border-collapse: collapse;
-
       td,
       th {
         box-sizing: border-box;
         padding: 0.5em;
         border: solid 1px $border-color;
       }
-
       tr {
         &:first-child {
           td {
@@ -87,14 +75,12 @@ $border-color: #e5e5e5;
   .wp-block-embed {
     margin: 1.5rem 0;
   }
-
   .is-provider-youtube {
     .iframe {
       position: relative;
       padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
-
       iframe {
         position: absolute;
         top: 0;
@@ -114,11 +100,9 @@ $border-color: #e5e5e5;
     h2 {
       font-size: $global-small-font-size*1.6;
     }
-
     h3 {
       font-size: $global-small-font-size*1.4;
     }
-
     h4 {
       font-size: $global-small-font-size*1.2;
     }
