@@ -31,7 +31,7 @@ if (function_exists('yoast_breadcrumb')) {
 <a class="uk-text-small uk-link-text uk-display-inline-block uk-margin-small-right" href="<?php echo $home; ?>/privacy-policy/">プライバシーポリシー</a>
 <a class="uk-text-small uk-link-text uk-display-inline-block" href="<?php echo $home; ?>/sitemap/">サイトマップ</a>
 </p>
-<p class="uk-text-small uk-margin-remove uk-text-right@s uk-text-center">©2017 <a class="uk-link-text" href="<?php echo $home; ?>">Anyushu</a></p>
+<p class="uk-text-small uk-margin-remove uk-text-right@s uk-text-center">©2017 <a class="uk-link-text" href="<?php echo $home; ?>"><?php bloginfo("name"); ?></a></p>
 </div>
 </div>
 </div>

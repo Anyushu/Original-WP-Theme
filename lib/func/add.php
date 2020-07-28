@@ -78,6 +78,7 @@ add_filter('the_content', 'wrap_iframe_in_div');
 // ブログカード
 function nlink_scode($atts)
 {
+    $nlink = "";
     extract(shortcode_atts(array(
         'url'=>'',
         'title'=>'',
@@ -90,7 +91,7 @@ function nlink_scode($atts)
     }
     if (has_post_thumbnail($id)) {
         $img = wp_get_attachment_image_src(get_post_thumbnail_id($id), 'thumbnail');
-        $img_tag = '<img loading="lazy" src="'.$img[0].'" alt="'.$title.'">';
+        $img_tag = '<img src="'.$img[0].'" alt="'.$title.'">';
     } else {
         $img_tag = '';
     }

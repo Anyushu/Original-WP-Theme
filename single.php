@@ -48,12 +48,18 @@ $tag_name = $tag->name;
 <img class="uk-box-shadow-small uk-width-expand" src="<?php echo $img_m; ?>" srcset="<?php echo $img_m; ?> 1x, <?php echo $img; ?> 2x" alt="<?php echo $ttl; ?>">
 </figure>
 <?php endif; ?>
+
+<hr class="uk-divider-icon">
+<?php echo do_shortcode('[addtoany]'); ?>
+
 <div id="toc" class="toc uk-section-muted"></div>
 <div class="main-article">
 <?php the_content(); ?>
 <hr class="uk-divider-icon">
 <?php echo do_shortcode('[addtoany]'); ?>
 </div>
+
+<?php if (!is_user_logged_in()): ?>
 <!-- googleads -->
 <div class="googleads uk-margin-medium-top">
 <!-- サイドバーウイジェット -->
@@ -62,6 +68,8 @@ $tag_name = $tag->name;
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 <!-- googleads -->
+<?php endif; ?>
+
 </article>
 <?php get_sidebar(); ?>
 </div>

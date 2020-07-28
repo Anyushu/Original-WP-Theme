@@ -23,40 +23,6 @@ foreach ($categories as $category):
 </ul>
 </div>
 
-<?php if (!is_page('ranking')): ?>
-<div class="uk-margin-large-bottom">
-<h3 class="uk-heading-line uk-text-center uk-text-lead"><span>今月の人気記事</span></h3>
-<?php
-$args = get_popular_args('monthly', '5');
-$posts = get_posts($args);
-foreach ($posts as $post):
-$ttl = get_the_title();
-$permalink = get_the_permalink();
-$img = '';
-if (has_post_thumbnail()) {
-    $img = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
-}
-?>
-<div class="uk-flex-middle uk-margin-remove-top" uk-grid>
-<div class="uk-width-auto">
-<a class="uk-link-toggle" href="<?php echo $permalink; ?>">
-<img loading="lazy" width="80" height="80" src="<?php echo $img; ?>" srcset="<?php echo $img; ?> 1x, <?php echo $img; ?> 2x" alt="<?php echo $ttl; ?>">
-</a>
-</div>
-<div class="uk-padding-small uk-width-expand">
-<a class="uk-link-toggle" href="<?php echo $permalink; ?>">
-<h4 class="uk-text-small uk-card-title uk-margin-remove-bottom"><?php echo $ttl; ?></h4>
-<p class="uk-text-meta uk-margin-small-top uk-margin-remove-bottom"><time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y.m.d'); ?></time></p>
-</a>
-</div>
-</div>
-<?php
-endforeach;
-wp_reset_query();
-?>
-</div>
-<?php endif; ?>
-
 <?php if (is_single()):
 foreach ((get_the_category()) as $cat) {
     $catid = $cat->cat_ID ;
@@ -82,14 +48,14 @@ if (has_post_thumbnail()) {
 ?>
 <div class="uk-flex-middle uk-margin-remove-top" uk-grid>
 <div class="uk-width-auto">
-<a class="uk-link-toggle" href="<?php echo $permalink; ?>">
+<a class="uk-link-toggle" href="<?php echo $permalink; ?>" target="_blank">
 <img width="80" height="80" src="<?php echo $img; ?>" srcset="<?php echo $img; ?> 1x, <?php echo $img; ?> 2x" alt="<?php echo $ttl; ?>">
 </a>
 </div>
 <div class="uk-padding-small uk-width-expand">
-<a class="uk-link-toggle" href="<?php echo $permalink; ?>">
+<a class="uk-link-toggle" href="<?php echo $permalink; ?>" target="_blank">
 <h4 class="uk-text-small uk-card-title uk-margin-remove-bottom"><?php echo $ttl; ?></h4>
-<p class="uk-text-meta uk-margin-small-top uk-margin-remove-bottom"><time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y.m.d'); ?></time></p>
+<p class="uk-text-meta uk-margin-small-top uk-margin-remove-bottom"><time datetime="<?php the_modified_time('Y-m-d'); ?>"><?php the_modified_time('Y.m.d'); ?></time></p>
 </a>
 </div>
 </div>
@@ -99,6 +65,41 @@ wp_reset_query();
 ?>
 </div>
 <?php endif; ?>
+
+<?php if (!is_page('ranking')): ?>
+<div class="uk-margin-large-bottom">
+<h3 class="uk-heading-line uk-text-center uk-text-lead"><span>今月の人気記事</span></h3>
+<?php
+$args = get_popular_args('monthly', '5');
+$posts = get_posts($args);
+foreach ($posts as $post):
+$ttl = get_the_title();
+$permalink = get_the_permalink();
+$img = '';
+if (has_post_thumbnail()) {
+    $img = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+}
+?>
+<div class="uk-flex-middle uk-margin-remove-top" uk-grid>
+<div class="uk-width-auto">
+<a class="uk-link-toggle" href="<?php echo $permalink; ?>" target="_blank">
+<img loading="lazy" width="80" height="80" src="<?php echo $img; ?>" srcset="<?php echo $img; ?> 1x, <?php echo $img; ?> 2x" alt="<?php echo $ttl; ?>">
+</a>
+</div>
+<div class="uk-padding-small uk-width-expand">
+<a class="uk-link-toggle" href="<?php echo $permalink; ?>" target="_blank">
+<h4 class="uk-text-small uk-card-title uk-margin-remove-bottom"><?php echo $ttl; ?></h4>
+<p class="uk-text-meta uk-margin-small-top uk-margin-remove-bottom"><time datetime="<?php the_modified_time('Y-m-d'); ?>"><?php the_modified_time('Y.m.d'); ?></time></p>
+</a>
+</div>
+</div>
+<?php
+endforeach;
+wp_reset_query();
+?>
+</div>
+<?php endif; ?>
+
 <div class="uk-margin-large-bottom">
 <h3 class="uk-heading-line uk-text-center uk-text-lead"><span>おすすめタグ</span></h3>
 <div class="uk-flex uk-flex-wrap">
@@ -117,6 +118,7 @@ if ($posttags) {
 ?>
 </div>
 </div>
+
 <div class="uk-margin-large-bottom">
 <div class="uk-card uk-card-default uk-card-small uk-box-shadow-small">
 <div class="uk-card-header">
@@ -141,11 +143,13 @@ if ($posttags) {
 </div>
 </div>
 
+<?php if (!is_user_logged_in()): ?>
 <div class="side__ads">
 <a href="https://px.a8.net/svt/ejp?a8mat=35PWPM+E22GZ6+CO4+102V9D" rel="nofollow">
 <img alt="wpX" src="https://www26.a8.net/svt/bgt?aid=191005402850&wid=001&eno=01&mid=s00000001642006060000&mc=1"></a>
 <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=35PWPM+E22GZ6+CO4+102V9D" alt="A8net">
 </div>
+<?php endif; ?>
 
 <?php dynamic_sidebar(); ?>
 
