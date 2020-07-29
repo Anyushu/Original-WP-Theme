@@ -28,6 +28,7 @@ if (function_exists('yoast_breadcrumb')) {
 <div class="uk-container">
 <div class="uk-column-1-2@s">
 <p class="uk-text-small uk-margin-remove uk-text-left@s uk-text-center">
+<a class="uk-text-small uk-link-text uk-display-inline-block uk-margin-small-right" href="https://blog.with2.net/link/?2046388" target="_blank">人気ブログランキング参加中</a>
 <a class="uk-text-small uk-link-text uk-display-inline-block uk-margin-small-right" href="<?php echo $home; ?>/privacy-policy/">プライバシーポリシー</a>
 <a class="uk-text-small uk-link-text uk-display-inline-block" href="<?php echo $home; ?>/sitemap/">サイトマップ</a>
 </p>
