@@ -9,6 +9,10 @@
 @import "single";
 @import "adjustment";
 
+ins {
+  background: none;
+}
+
 .header {
   &-wrap {
     min-height: 20px;
