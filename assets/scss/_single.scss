@@ -23,6 +23,15 @@ $border-color: #e5e5e5;
     font-weight: bold;
     margin: 1.5em auto 0.5em;
   }
+  ul,
+  ol {
+    li {
+      margin-bottom: 1em;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
   pre {
     &.wp-block-code {
       padding: 0;
@@ -98,13 +107,13 @@ $border-color: #e5e5e5;
 @media (max-width: $breakpoint-small) {
   .main-article {
     h2 {
-      font-size: $global-small-font-size*1.6;
+      font-size: $global-small-font-size * 1.6;
     }
     h3 {
-      font-size: $global-small-font-size*1.4;
+      font-size: $global-small-font-size * 1.4;
     }
     h4 {
-      font-size: $global-small-font-size*1.2;
+      font-size: $global-small-font-size * 1.2;
     }
   }
 }
